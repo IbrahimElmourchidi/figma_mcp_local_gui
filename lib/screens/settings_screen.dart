@@ -483,7 +483,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       onPressed: () async {
                         try {
                           await RuntimeInstaller.forceReinstall();
-                          if (mounted) {
+                          if (context.mounted) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text('Runtime reinstalled'),
@@ -491,7 +491,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             );
                           }
                         } catch (e) {
-                          if (mounted) {
+                          if (context.mounted) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text('Failed: $e'),
@@ -509,7 +509,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         onPressed: () async {
                           try {
                             await RuntimeInstaller.rollback();
-                            if (mounted) {
+                            if (context.mounted) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                   content: Text('Runtime rolled back'),
@@ -517,7 +517,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               );
                             }
                           } catch (e) {
-                            if (mounted) {
+                            if (context.mounted) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text('Failed: $e'),

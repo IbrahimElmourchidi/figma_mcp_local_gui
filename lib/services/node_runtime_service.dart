@@ -136,7 +136,7 @@ class NodeRuntimeService extends ChangeNotifier {
 
   Future<String?> _managedNodePath() async {
     final appDir = await AppUtils.getAppDirectory();
-    final version = AppConstants.pinnedNodeVersion;
+    const version = AppConstants.pinnedNodeVersion;
 
     if (Platform.isWindows) {
       final path = '${appDir.path}/node/$version/node.exe';
@@ -276,7 +276,7 @@ class NodeRuntimeService extends ChangeNotifier {
 
       // Extract
       debugPrint('Extracting Node.js...');
-      final version = AppConstants.pinnedNodeVersion;
+      const version = AppConstants.pinnedNodeVersion;
       final targetDir = Directory('${appDir.path}/node/$version');
       await _extractNode(archivePath, archiveName, tmpDir, targetDir);
 
@@ -341,7 +341,7 @@ class NodeRuntimeService extends ChangeNotifier {
     } else if (archiveName.endsWith('.zip')) {
       archive = ZipDecoder().decodeBytes(bytes);
     } else if (archiveName.endsWith('.tar.gz')) {
-      final decompressed = GZipDecoder().decodeBytes(bytes);
+      final decompressed = const GZipDecoder().decodeBytes(bytes);
       archive = TarDecoder().decodeBytes(decompressed);
     } else {
       throw Exception('Unsupported archive format: $archiveName');

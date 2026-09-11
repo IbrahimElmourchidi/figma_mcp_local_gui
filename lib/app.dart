@@ -94,7 +94,7 @@ class _FigmaMcpGuiAppState extends State<FigmaMcpGuiApp> {
                   _buildMainContent(),
                 // Update banner overlay
                 if (!bootstrapService.isRunning)
-                  Positioned(
+                  const Positioned(
                     top: 0,
                     left: 0,
                     right: 0,

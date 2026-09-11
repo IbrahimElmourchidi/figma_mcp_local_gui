@@ -44,6 +44,7 @@ class _AboutScreenState extends State<AboutScreen> {
       setState(() => _runtimeManifest = manifest);
     } catch (_) {}
 
+    if (!mounted) return;
     try {
       final nodeService = context.read<NodeRuntimeService>();
       _nodeVersion = nodeService.currentVersion;

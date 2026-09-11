@@ -57,12 +57,10 @@ class BootstrapService extends ChangeNotifier {
   bool get isRunning => _isRunning;
 
   BootstrapService({
-    required NodeRuntimeService nodeRuntimeService,
-    required RuntimeUpdateService runtimeUpdateService,
-    required UpdateService updateService,
-  })  : _nodeRuntimeService = nodeRuntimeService,
-        _runtimeUpdateService = runtimeUpdateService,
-        _updateService = updateService;
+    required this._nodeRuntimeService,
+    required this._runtimeUpdateService,
+    required this._updateService,
+  });
 
   Future<void> run({
     BridgeConfig? config,
