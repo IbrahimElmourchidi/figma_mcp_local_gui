@@ -15,7 +15,7 @@ jobs:
       - name: Verify tag matches pubspec.yaml
         run: |
           TAG="${GITHUB_REF#refs/tags/v}"
-          VERSION=$(grep '^version:' pubspec.yaml | awk '{print $1}' | cut -d'+' -f1)
+          VERSION=$(grep '^version:' pubspec.yaml | awk '{print $2}' | cut -d'+' -f1)
           if [ "$TAG" != "$VERSION" ]; then
             echo "error: tag $TAG does not match pubspec.yaml version $VERSION"
             exit 1
