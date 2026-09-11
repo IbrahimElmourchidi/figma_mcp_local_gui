@@ -3,7 +3,6 @@
 *.log
 *.pyc
 *.swp
-*.lock
 .DS_Store
 .atom/
 .build/
@@ -36,8 +35,8 @@ pubspec_overrides.yaml
 /coverage/
 /widget_preview/
 
-# Flutter metadata (auto-generated)
-.metadata
+# Flutter metadata (auto-generated - kept for reproducible builds)
+# .metadata
 
 # Symbolication related
 app.*.symbols

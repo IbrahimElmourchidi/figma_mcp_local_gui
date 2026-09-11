@@ -5,10 +5,14 @@ import 'core/theme.dart';
 import 'models/bridge_config.dart';
 import 'services/bridge_service.dart';
 import 'services/theme_service.dart';
+import 'services/bootstrap_service.dart';
+import 'services/update_service.dart';
 import 'screens/dashboard_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/system_check_screen.dart';
 import 'screens/about_screen.dart';
+import 'screens/bootstrap_screen.dart';
+import 'widgets/update_banner.dart';
 
 class FigmaMcpGuiApp extends StatefulWidget {
   final BridgeConfig initialConfig;
@@ -25,25 +29,55 @@ class _FigmaMcpGuiAppState extends State<FigmaMcpGuiApp> {
   @override
   void initState() {
     super.initState();
+    _initServices();
     _handleAutoStart();
   }
 
+  Future<void> _initServices() async {
+    // Initialize update service to get current version
+    final updateService = context.read<UpdateService>();
+    await updateService.init();
+  }
+
   void _handleAutoStart() {
-    // Auto-start server if enabled in config
-    if (widget.initialConfig.autoStart) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
+    if (!widget.initialConfig.autoStart) return;
+
+    // Wait for bootstrap (Node provisioning + runtime install) to finish
+    // before starting the server - otherwise NodeRuntimeService may not be
+    // ready yet and startServer() silently falls back to a bare 'node' on
+    // PATH, which is exactly what managed provisioning exists to avoid.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final bootstrapService = context.read<BootstrapService>();
+
+      void tryStart() {
+        if (!mounted) return;
         final bridgeService = context.read<BridgeService>();
         if (!bridgeService.state.isRunning) {
           bridgeService.startServer();
         }
-      });
-    }
+      }
+
+      if (!bootstrapService.isRunning) {
+        tryStart();
+        return;
+      }
+
+      late VoidCallback listener;
+      listener = () {
+        if (!bootstrapService.isRunning) {
+          bootstrapService.removeListener(listener);
+          tryStart();
+        }
+      };
+      bootstrapService.addListener(listener);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ThemeService>(
-      builder: (context, themeService, child) {
+    return Consumer2<ThemeService, BootstrapService>(
+      builder: (context, themeService, bootstrapService, child) {
         return MaterialApp(
           title: 'Figma Local MCP GUI',
           theme: AppTheme.lightTheme,
@@ -51,16 +85,43 @@ class _FigmaMcpGuiAppState extends State<FigmaMcpGuiApp> {
           themeMode: themeService.mode,
           debugShowCheckedModeBanner: false,
           home: Scaffold(
-            body: Row(
+            body: Stack(
               children: [
-                _buildNavigationRail(),
-                const VerticalDivider(width: 1),
-                Expanded(child: _buildBody()),
+                // Main content
+                if (bootstrapService.isRunning)
+                  const BootstrapScreen()
+                else
+                  _buildMainContent(),
+                // Update banner overlay
+                if (!bootstrapService.isRunning)
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    child: UpdateBanner(),
+                  ),
               ],
             ),
           ),
         );
       },
+    );
+  }
+
+  Widget _buildMainContent() {
+    return Column(
+      children: [
+        const SizedBox(height: 40), // Space for update banner
+        Expanded(
+          child: Row(
+            children: [
+              _buildNavigationRail(),
+              const VerticalDivider(width: 1),
+              Expanded(child: _buildBody()),
+            ],
+          ),
+        ),
+      ],
     );
   }
 

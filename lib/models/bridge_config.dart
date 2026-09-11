@@ -11,6 +11,9 @@ class BridgeConfig {
   final bool autoStart;
   final String? figmaToken;
   final String? mcpServerPath;
+  final String? nodePath;
+  final String? figmaPluginId;
+  final bool autoCheckUpdates;
 
   BridgeConfig({
     int? port,
@@ -19,6 +22,9 @@ class BridgeConfig {
     this.autoStart = false,
     this.figmaToken,
     this.mcpServerPath,
+    this.nodePath,
+    this.figmaPluginId,
+    this.autoCheckUpdates = true,
   }) : port = port ?? AppConstants.defaultPort,
        host = host ?? AppConstants.defaultHost,
        password = password ?? defaultPassword;
@@ -34,6 +40,11 @@ class BridgeConfig {
     bool clearFigmaToken = false,
     String? mcpServerPath,
     bool clearMcpServerPath = false,
+    String? nodePath,
+    bool clearNodePath = false,
+    String? figmaPluginId,
+    bool clearFigmaPluginId = false,
+    bool? autoCheckUpdates,
   }) {
     return BridgeConfig(
       port: port ?? this.port,
@@ -44,6 +55,11 @@ class BridgeConfig {
       mcpServerPath: clearMcpServerPath
           ? null
           : (mcpServerPath ?? this.mcpServerPath),
+      nodePath: clearNodePath ? null : (nodePath ?? this.nodePath),
+      figmaPluginId: clearFigmaPluginId
+          ? null
+          : (figmaPluginId ?? this.figmaPluginId),
+      autoCheckUpdates: autoCheckUpdates ?? this.autoCheckUpdates,
     );
   }
 
@@ -55,6 +71,9 @@ class BridgeConfig {
       'autoStart': autoStart,
       'figmaToken': figmaToken,
       'mcpServerPath': mcpServerPath,
+      'nodePath': nodePath,
+      'figmaPluginId': figmaPluginId,
+      'autoCheckUpdates': autoCheckUpdates,
     };
   }
 
@@ -66,6 +85,9 @@ class BridgeConfig {
       autoStart: json['autoStart'] ?? false,
       figmaToken: json['figmaToken'],
       mcpServerPath: json['mcpServerPath'],
+      nodePath: json['nodePath'],
+      figmaPluginId: json['figmaPluginId'],
+      autoCheckUpdates: json['autoCheckUpdates'] ?? true,
     );
   }
 }

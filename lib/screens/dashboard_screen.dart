@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../services/bridge_service.dart';
 import '../services/mcp_service.dart';
+import '../services/node_runtime_service.dart';
 import '../services/plugin_manager.dart';
 import '../widgets/server_status_card.dart';
 import '../widgets/token_display.dart';
@@ -230,6 +231,7 @@ class DashboardScreen extends StatelessWidget {
 
       // Find MCP server path using the service resolver
       final mcpService = context.read<McpService>();
+      final nodePath = config.nodePath ?? context.read<NodeRuntimeService>().nodePath;
       String mcpPath;
       try {
         mcpPath = await mcpService.findMcpServerPath(config.mcpServerPath);
@@ -250,6 +252,7 @@ class DashboardScreen extends StatelessWidget {
         bridgeToken: config.password,
         bridgePort: config.port,
         figmaToken: config.figmaToken,
+        nodePath: nodePath,
       );
 
       await McpService.saveOpenCodeConfig(opencodeConfig);
@@ -287,6 +290,7 @@ class DashboardScreen extends StatelessWidget {
       bridgeToken: config.password,
       bridgePort: config.port,
       figmaToken: config.figmaToken,
+      nodePath: config.nodePath ?? context.read<NodeRuntimeService>().nodePath,
     );
 
     final configJson = const JsonEncoder.withIndent('    ')

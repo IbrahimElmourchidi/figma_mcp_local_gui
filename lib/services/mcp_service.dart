@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 
 import '../models/bridge_config.dart';
 import 'runtime_installer.dart';
+import 'node_runtime_service.dart';
 
 enum McpStatus { stopped, starting, running, stopping, error }
 
@@ -49,12 +50,17 @@ class McpService extends ChangeNotifier {
   StreamSubscription<String>? _stdoutSub;
   StreamSubscription<String>? _stderrSub;
   bool _disposed = false;
+  NodeRuntimeService? _nodeRuntimeService;
 
   McpState get state => _state;
   Stream<String> get stdout => _stdoutController.stream;
   Stream<String> get stderr => _stderrController.stream;
 
   bool get isRunning => _mcpProcess != null && _mcpProcess!.pid > 0;
+
+  void setNodeRuntimeService(NodeRuntimeService service) {
+    _nodeRuntimeService = service;
+  }
 
   Future<void> start(BridgeConfig config) async {
     if (isRunning) {
@@ -72,7 +78,9 @@ class McpService extends ChangeNotifier {
         throw Exception('MCP server not found at: $serverPath');
       }
 
-      // Build environment variables
+      final nodeExecutable = _nodeRuntimeService?.resolveExecutable(config) ??
+          (config.nodePath ?? 'node');
+
       final env = Map<String, String>.from(Platform.environment);
       env['FIGMA_PLUGIN_BRIDGE_TOKEN'] = config.password;
       env['FIGMA_PLUGIN_BRIDGE_URL'] = 'http://127.0.0.1:${config.port}';
@@ -81,15 +89,13 @@ class McpService extends ChangeNotifier {
         env['FIGMA_TOKEN'] = config.figmaToken!;
       }
 
-      // Start MCP server process
       _mcpProcess = await Process.start(
-        'node',
+        nodeExecutable,
         [serverPath],
         environment: env,
         mode: ProcessStartMode.normal,
       );
 
-      // Listen to stdout
       _stdoutSub = _mcpProcess!.stdout
           .transform(utf8.decoder)
           .transform(const LineSplitter())
@@ -100,7 +106,6 @@ class McpService extends ChangeNotifier {
             }
           });
 
-      // Listen to stderr
       _stderrSub = _mcpProcess!.stderr
           .transform(utf8.decoder)
           .transform(const LineSplitter())
@@ -111,7 +116,6 @@ class McpService extends ChangeNotifier {
             }
           });
 
-      // Listen for exit
       _mcpProcess!.exitCode.then((code) {
         _mcpProcess = null;
         if (!_disposed) {
@@ -169,30 +173,22 @@ class McpService extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Public method to find MCP server path
   Future<String> findMcpServerPath(String? configuredPath) =>
       _findMcpServerPath(configuredPath);
 
   Future<String> _findMcpServerPath(String? configuredPath) async {
-    // Use configured path if provided
     if (configuredPath != null && configuredPath.isNotEmpty) {
       if (await File(configuredPath).exists()) {
         return configuredPath;
       }
     }
 
-    // Try to get from installed runtime (copies from bundled assets if needed)
     try {
       return await RuntimeInstaller.getMcpServerPath();
     } catch (e) {
       debugPrint('Runtime installer failed: $e');
     }
 
-    // Dev-mode convenience: when run via `flutter run` from the project
-    // root, the working directory is the project root itself, so the
-    // source asset is also reachable as a plain relative path (this does
-    // NOT work in a built/installed app, where rootBundle is the only way
-    // to reach bundled assets - that's what RuntimeInstaller uses above).
     const devPath = 'assets/bundled/mcp-server.cjs';
     if (await File(devPath).exists()) {
       return devPath;
@@ -204,12 +200,35 @@ class McpService extends ChangeNotifier {
     );
   }
 
-  /// Generate opencode configuration with correct schema
+  /// Resolve the opencode config directory, cross-platform.
+  static Future<Directory> _getOpenCodeConfigDir() async {
+    if (Platform.isWindows) {
+      final appData = Platform.environment['APPDATA'];
+      if (appData == null) {
+        throw Exception('APPDATA environment variable not set');
+      }
+      return Directory('$appData\\opencode');
+    }
+
+    // Respect XDG_CONFIG_HOME on Linux, fall back to ~/.config
+    if (Platform.isLinux) {
+      final xdg = Platform.environment['XDG_CONFIG_HOME'];
+      if (xdg != null && xdg.isNotEmpty) {
+        return Directory('$xdg/opencode');
+      }
+    }
+
+    final home = Platform.environment['HOME'];
+    if (home == null) throw Exception('HOME environment variable not set');
+    return Directory('$home/.config/opencode');
+  }
+
   static Map<String, dynamic> generateOpenCodeConfig({
     required String mcpServerPath,
     required String bridgeToken,
     required int bridgePort,
     String? figmaToken,
+    String? nodePath,
   }) {
     final environment = <String, String>{
       'FIGMA_PLUGIN_BRIDGE_TOKEN': bridgeToken,
@@ -220,12 +239,17 @@ class McpService extends ChangeNotifier {
       environment['FIGMA_TOKEN'] = figmaToken;
     }
 
+    final command = <String>[
+      nodePath ?? 'node',
+      mcpServerPath,
+    ];
+
     return {
       '\$schema': 'https://opencode.ai/config.json',
       'mcp': {
         'figma-mcp-free': {
           'type': 'local',
-          'command': ['node', mcpServerPath],
+          'command': command,
           'environment': environment,
           'enabled': true,
         },
@@ -233,43 +257,34 @@ class McpService extends ChangeNotifier {
     };
   }
 
-  /// Save opencode configuration with backup and atomic write
   static Future<void> saveOpenCodeConfig(Map<String, dynamic> config) async {
-    final home = Platform.environment['HOME'];
-    if (home == null) throw Exception('HOME environment variable not set');
-
-    final configDir = Directory('$home/.config/opencode');
+    final configDir = await _getOpenCodeConfigDir();
     if (!await configDir.exists()) {
       await configDir.create(recursive: true);
     }
 
-    final configFile = File('$home/.config/opencode/opencode.json');
-    final backupFile = File('$home/.config/opencode/opencode.json.bak');
-    final tempFile = File('$home/.config/opencode/opencode.json.tmp');
+    final configFile = File('${configDir.path}/opencode.json');
+    final backupFile = File('${configDir.path}/opencode.json.bak');
+    final tempFile = File('${configDir.path}/opencode.json.tmp');
 
-    // Backup existing config
     if (await configFile.exists()) {
       await configFile.copy(backupFile.path);
     }
 
-    // Read existing config if it exists
     Map<String, dynamic> existingConfig = {};
     if (await configFile.exists()) {
       final content = await configFile.readAsString();
       existingConfig = jsonDecode(content);
     }
 
-    // Ensure $schema is preserved
     if (!existingConfig.containsKey('\$schema')) {
       existingConfig['\$schema'] = 'https://opencode.ai/config.json';
     }
 
-    // Merge MCP config - replace stale entries entirely
     final existingMcp = existingConfig['mcp'] as Map<String, dynamic>? ?? {};
     final newMcp = config['mcp'] as Map<String, dynamic>;
 
     for (final entry in newMcp.entries) {
-      // Remove stale entry if it exists with old shape
       if (existingMcp.containsKey(entry.key)) {
         existingMcp.remove(entry.key);
       }
@@ -278,7 +293,6 @@ class McpService extends ChangeNotifier {
 
     existingConfig['mcp'] = existingMcp;
 
-    // Write atomically
     await tempFile.writeAsString(
       const JsonEncoder.withIndent('    ').convert(existingConfig),
     );

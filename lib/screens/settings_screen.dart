@@ -5,6 +5,9 @@ import '../core/constants.dart';
 import '../services/bridge_service.dart';
 import '../services/storage_service.dart';
 import '../services/theme_service.dart';
+import '../services/runtime_installer.dart';
+import '../services/runtime_update_service.dart';
+import '../services/source_build_service.dart';
 import '../models/bridge_config.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -20,8 +23,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
   final _passwordController = TextEditingController();
   final _figmaTokenController = TextEditingController();
   final _mcpPathController = TextEditingController();
+  final _nodePathController = TextEditingController();
+  final _figmaPluginIdController = TextEditingController();
   String _host = AppConstants.defaultHost;
   bool _autoStart = false;
+  bool _autoCheckUpdates = true;
   bool _showPassword = false;
 
   @override
@@ -42,7 +48,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _passwordController.text = config.password;
       _figmaTokenController.text = config.figmaToken ?? '';
       _mcpPathController.text = config.mcpServerPath ?? '';
+      _nodePathController.text = config.nodePath ?? '';
+      _figmaPluginIdController.text = config.figmaPluginId ?? '';
       _autoStart = config.autoStart;
+      _autoCheckUpdates = config.autoCheckUpdates;
     });
   }
 
@@ -61,7 +70,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
       mcpServerPath: _mcpPathController.text.isNotEmpty
           ? _mcpPathController.text
           : null,
+      nodePath: _nodePathController.text.isNotEmpty
+          ? _nodePathController.text
+          : null,
+      figmaPluginId: _figmaPluginIdController.text.isNotEmpty
+          ? _figmaPluginIdController.text
+          : null,
       autoStart: _autoStart,
+      autoCheckUpdates: _autoCheckUpdates,
     );
 
     final storage = StorageService();
@@ -80,6 +96,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _passwordController.dispose();
     _figmaTokenController.dispose();
     _mcpPathController.dispose();
+    _nodePathController.dispose();
+    _figmaPluginIdController.dispose();
     super.dispose();
   }
 
@@ -103,9 +121,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   const SizedBox(height: 24),
                   _buildMcpSettings(),
                   const SizedBox(height: 24),
+                  _buildNodeSettings(),
+                  const SizedBox(height: 24),
+                  _buildPluginSettings(),
+                  const SizedBox(height: 24),
                   _buildGeneralSettings(),
                   const SizedBox(height: 24),
                   _buildAppearanceSettings(),
+                  const SizedBox(height: 24),
+                  _buildRuntimeSettings(),
                   const SizedBox(height: 24),
                   Align(
                     alignment: Alignment.centerRight,
@@ -283,6 +307,86 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
+  Widget _buildNodeSettings() {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.terminal, color: Theme.of(context).colorScheme.primary),
+                const SizedBox(width: 8),
+                Text(
+                  'Node.js',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'The app manages its own Node.js runtime by default. '
+              'Override with a custom path if needed.',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 16),
+            TextFormField(
+              controller: _nodePathController,
+              decoration: const InputDecoration(
+                labelText: 'Node.js Path (optional)',
+                hintText: '/usr/local/bin/node',
+                helperText: 'Auto-detected if not specified',
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPluginSettings() {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.extension, color: Theme.of(context).colorScheme.primary),
+                const SizedBox(width: 8),
+                Text(
+                  'Figma Plugin',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Your Figma development plugin ID. You get this when creating '
+              'a development plugin in Figma.',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 16),
+            TextFormField(
+              controller: _figmaPluginIdController,
+              decoration: const InputDecoration(
+                labelText: 'Figma Plugin ID',
+                hintText: '1679462793087496067',
+                helperText: 'From Figma plugin development settings',
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _buildGeneralSettings() {
     return Card(
       child: Padding(
@@ -297,6 +401,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
               subtitle: const Text('Start server when app launches'),
               value: _autoStart,
               onChanged: (value) => setState(() => _autoStart = value),
+              contentPadding: EdgeInsets.zero,
+            ),
+            SwitchListTile(
+              title: const Text('Auto-check for updates'),
+              subtitle: const Text('Check for updates on app launch'),
+              value: _autoCheckUpdates,
+              onChanged: (value) => setState(() => _autoCheckUpdates = value),
               contentPadding: EdgeInsets.zero,
             ),
           ],
@@ -345,6 +456,183 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         );
       },
+    );
+  }
+
+  Widget _buildRuntimeSettings() {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Runtime',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 16),
+            FutureBuilder<bool>(
+              future: RuntimeInstaller.hasRollbackAvailable(),
+              builder: (context, snapshot) {
+                final hasRollback = snapshot.data ?? false;
+                return Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    OutlinedButton.icon(
+                      onPressed: () async {
+                        try {
+                          await RuntimeInstaller.forceReinstall();
+                          if (mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Runtime reinstalled'),
+                              ),
+                            );
+                          }
+                        } catch (e) {
+                          if (mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('Failed: $e'),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                          }
+                        }
+                      },
+                      icon: const Icon(Icons.refresh),
+                      label: const Text('Force Reinstall'),
+                    ),
+                    if (hasRollback)
+                      OutlinedButton.icon(
+                        onPressed: () async {
+                          try {
+                            await RuntimeInstaller.rollback();
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text('Runtime rolled back'),
+                                ),
+                              );
+                            }
+                          } catch (e) {
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Failed: $e'),
+                                  backgroundColor: Colors.red,
+                                ),
+                              );
+                            }
+                          }
+                        },
+                        icon: const Icon(Icons.undo),
+                        label: const Text('Rollback'),
+                      ),
+                  ],
+                );
+              },
+            ),
+            const SizedBox(height: 16),
+            const Divider(),
+            const SizedBox(height: 8),
+            Text(
+              'Advanced: build from source',
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'For a SHA the runtime-sync CI has not published a prebuilt '
+              'bundle for yet. Downloads the upstream source and pnpm/esbuild '
+              'as plain packages and builds locally using the managed Node.',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Consumer2<RuntimeUpdateService, SourceBuildService>(
+              builder: (context, runtimeUpdateService, sourceBuildService, child) {
+                final sha = runtimeUpdateService.latestUpstreamSha;
+                return Row(
+                  children: [
+                    Expanded(
+                      child: sourceBuildService.isBuilding
+                          ? Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                LinearProgressIndicator(value: sourceBuildService.progress),
+                                const SizedBox(height: 4),
+                                Text(
+                                  sourceBuildService.status,
+                                  style: Theme.of(context).textTheme.bodySmall,
+                                ),
+                              ],
+                            )
+                          : Text(
+                              sha == null
+                                  ? 'Upstream SHA unknown - open About to check first.'
+                                  : 'Latest upstream: ${sha.substring(0, sha.length > 12 ? 12 : sha.length)}',
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                    ),
+                    const SizedBox(width: 8),
+                    OutlinedButton.icon(
+                      onPressed: sourceBuildService.isBuilding || sha == null
+                          ? null
+                          : () => _buildFromSource(sourceBuildService, sha),
+                      icon: const Icon(Icons.build),
+                      label: const Text('Build from source'),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _buildFromSource(
+    SourceBuildService sourceBuildService,
+    String upstreamSha,
+  ) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('Build runtime from source?'),
+        content: Text(
+          'This downloads figma-mcp-free @ ${upstreamSha.substring(0, 12)} and '
+          'builds it on this machine. It can take a few minutes and requires '
+          'network access to GitHub and the npm registry.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext, false),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(dialogContext, true),
+            child: const Text('Build'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+
+    final success = await sourceBuildService.buildFromSource(upstreamSha: upstreamSha);
+    if (!mounted) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          success
+              ? 'Runtime built and installed successfully'
+              : 'Build failed: ${sourceBuildService.error ?? "unknown error"}',
+        ),
+        backgroundColor: success ? null : Colors.red,
+      ),
     );
   }
 }

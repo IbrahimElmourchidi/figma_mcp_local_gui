@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../services/update_service.dart';
+import '../services/runtime_update_service.dart';
+import '../services/runtime_installer.dart';
+import '../services/node_runtime_service.dart';
 import '../core/constants.dart';
 
 class AboutScreen extends StatefulWidget {
@@ -13,12 +17,37 @@ class AboutScreen extends StatefulWidget {
 }
 
 class _AboutScreenState extends State<AboutScreen> {
+  String _appVersion = '';
+  RuntimeManifest? _runtimeManifest;
+  String? _nodeVersion;
+
   @override
   void initState() {
     super.initState();
+    _loadInfo();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<UpdateService>().checkForUpdates();
+      context.read<RuntimeUpdateService>().checkForRuntimeUpdate();
     });
+  }
+
+  Future<void> _loadInfo() async {
+    try {
+      final info = await PackageInfo.fromPlatform();
+      setState(() => _appVersion = info.version);
+    } catch (_) {
+      setState(() => _appVersion = 'unknown');
+    }
+
+    try {
+      final manifest = await RuntimeInstaller.getInstalledManifest();
+      setState(() => _runtimeManifest = manifest);
+    } catch (_) {}
+
+    try {
+      final nodeService = context.read<NodeRuntimeService>();
+      _nodeVersion = nodeService.currentVersion;
+    } catch (_) {}
   }
 
   @override
@@ -52,7 +81,7 @@ class _AboutScreenState extends State<AboutScreen> {
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           Text(
-                            'Version ${AppConstants.appVersion}',
+                            'Version $_appVersion',
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ],
@@ -70,9 +99,60 @@ class _AboutScreenState extends State<AboutScreen> {
             ),
           ),
           const SizedBox(height: 16),
+          _buildRuntimeInfoCard(),
+          const SizedBox(height: 16),
           _buildUpdateSection(),
           const SizedBox(height: 16),
           _buildLinksSection(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRuntimeInfoCard() {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Runtime Information',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 12),
+            _buildInfoRow(
+              'Upstream SHA',
+              _shortSha(_runtimeManifest?.upstreamSha),
+            ),
+            if (_nodeVersion != null)
+              _buildInfoRow('Node.js', _nodeVersion!),
+            if (_runtimeManifest?.builtAt != null)
+              _buildInfoRow('Built at', _runtimeManifest!.builtAt!),
+          ],
+        ),
+      ),
+    );
+  }
+
+  String _shortSha(String? sha) {
+    if (sha == null || sha.isEmpty) return 'unknown';
+    return sha.length > 12 ? sha.substring(0, 12) : sha;
+  }
+
+  Widget _buildInfoRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: Theme.of(context).textTheme.bodyMedium),
+          Text(
+            value,
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              fontFamily: 'monospace',
+            ),
+          ),
         ],
       ),
     );
@@ -116,7 +196,20 @@ class _AboutScreenState extends State<AboutScreen> {
                       Text('Checking for updates...'),
                     ],
                   )
-                else if (updateService.hasUpdate())
+                else if (updateService.noReleasesYet)
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.info_outline,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                      const SizedBox(width: 12),
+                      const Expanded(
+                        child: Text('No releases available yet.'),
+                      ),
+                    ],
+                  )
+                else if (updateService.hasUpdate)
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -182,6 +275,15 @@ class _AboutScreenState extends State<AboutScreen> {
                       const Text('You are running the latest version'),
                     ],
                   ),
+                // Manual check button always visible when enabled
+                if (updateService.isUpdateEnabled) ...[
+                  const SizedBox(height: 12),
+                  OutlinedButton.icon(
+                    onPressed: () => updateService.checkForUpdates(),
+                    icon: const Icon(Icons.refresh, size: 16),
+                    label: const Text('Check for updates'),
+                  ),
+                ],
               ],
             ),
           ),
@@ -191,10 +293,6 @@ class _AboutScreenState extends State<AboutScreen> {
   }
 
   Widget _buildLinksSection() {
-    // No repo is configured (AppConstants.githubOwner/githubRepo are
-    // deliberately empty until this project has a real one), so building
-    // GitHub URLs from them would produce dead links like
-    // "https://github.com//" - show nothing instead of a broken card.
     if (AppConstants.githubOwner.isEmpty || AppConstants.githubRepo.isEmpty) {
       return const SizedBox.shrink();
     }

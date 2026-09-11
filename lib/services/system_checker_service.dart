@@ -5,15 +5,21 @@ import 'package:flutter/foundation.dart';
 
 import '../models/system_requirement.dart';
 import '../core/constants.dart';
+import 'node_runtime_service.dart';
 
 class SystemCheckerService extends ChangeNotifier {
   List<SystemRequirement> _requirements = [];
   bool _isChecking = false;
   int _port = AppConstants.defaultPort;
+  NodeRuntimeService? _nodeRuntimeService;
 
   List<SystemRequirement> get requirements => _requirements;
   bool get isChecking => _isChecking;
   bool get allMet => _requirements.every((r) => r.isMet);
+
+  void setNodeRuntimeService(NodeRuntimeService service) {
+    _nodeRuntimeService = service;
+  }
 
   void updatePort(int port) {
     _port = port;
@@ -37,6 +43,15 @@ class SystemCheckerService extends ChangeNotifier {
   }
 
   Future<SystemRequirement> _checkNodeJs() async {
+    // Report on the managed runtime if available - NodeRuntimeService owns
+    // the status->requirement mapping so this doesn't keep its own copy of
+    // it that could drift from what BridgeService/McpService actually use
+    // to launch processes.
+    if (_nodeRuntimeService != null) {
+      return _nodeRuntimeService!.buildRequirement();
+    }
+
+    // No managed service wired up - fall back to a plain system node check
     try {
       final result = await Process.run('node', ['--version']);
       if (result.exitCode == 0) {
@@ -47,7 +62,7 @@ class SystemCheckerService extends ChangeNotifier {
         if (versionNum >= AppConstants.minNodeVersion) {
           return SystemRequirement(
             name: 'Node.js',
-            description: 'Required to run the bridge server',
+            description: 'System Node.js (managed not available)',
             status: RequirementStatus.met,
             currentVersion: version,
           );
@@ -124,13 +139,25 @@ class SystemCheckerService extends ChangeNotifier {
 
   Future<SystemRequirement> _checkFigmaDesktop() async {
     try {
-      final result = await Process.run('pgrep', ['-f', 'Figma']);
-      if (result.exitCode == 0) {
-        return SystemRequirement(
-          name: 'Figma Desktop',
-          description: 'Required to use the bridge plugin',
-          status: RequirementStatus.met,
-        );
+      if (Platform.isLinux || Platform.isMacOS) {
+        final result = await Process.run('pgrep', ['-f', 'Figma']);
+        if (result.exitCode == 0) {
+          return SystemRequirement(
+            name: 'Figma Desktop',
+            description: 'Required to use the bridge plugin',
+            status: RequirementStatus.met,
+          );
+        }
+      } else if (Platform.isWindows) {
+        final result = await Process.run('tasklist', ['/FI', 'IMAGENAME eq Figma.exe']);
+        if (result.exitCode == 0 &&
+            result.stdout.toString().contains('Figma.exe')) {
+          return SystemRequirement(
+            name: 'Figma Desktop',
+            description: 'Required to use the bridge plugin',
+            status: RequirementStatus.met,
+          );
+        }
       }
     } catch (e) {
       debugPrint('Figma check failed: $e');
@@ -146,7 +173,6 @@ class SystemCheckerService extends ChangeNotifier {
 
   Future<SystemRequirement> _checkPluginInstalled() async {
     try {
-      // B20: Only check standard Figma Development directories, no personal paths
       final home = Platform.environment['HOME'] ?? '';
       final appData = Platform.environment['APPDATA'];
 

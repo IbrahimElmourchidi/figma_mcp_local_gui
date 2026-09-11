@@ -7,14 +7,15 @@ import '../models/server_status.dart';
 import '../models/bridge_config.dart';
 import 'process_manager.dart';
 import 'runtime_installer.dart';
+import 'node_runtime_service.dart';
 
 class BridgeService extends ChangeNotifier {
-  /// Loopback hosts the vendored bridge-cli's `--host` flag accepts.
   static const List<String> validHosts = ['127.0.0.1', 'localhost', '::1'];
 
   final ProcessManagerService _processManager = ProcessManagerService();
   ServerState _state = ServerState();
   BridgeConfig _config = BridgeConfig();
+  NodeRuntimeService? _nodeRuntimeService;
   Timer? _uptimeTimer;
   bool _intentionalStop = false;
   bool _disposed = false;
@@ -31,12 +32,15 @@ class BridgeService extends ChangeNotifier {
     _exitCodeSub = _processManager.exitCode.listen(_onExitCode);
   }
 
+  void setNodeRuntimeService(NodeRuntimeService service) {
+    _nodeRuntimeService = service;
+  }
+
   void _onStdout(String line) {
     if (_disposed) return;
     debugPrint('[Bridge] $line');
     _addLog(line);
 
-    // Parse session ID
     if (line.contains('Session:')) {
       final sessionMatch = RegExp(r'Session:\s*(\S+)').firstMatch(line);
       if (sessionMatch != null) {
@@ -54,7 +58,6 @@ class BridgeService extends ChangeNotifier {
 
   void _onExitCode(int code) {
     if (_disposed) return;
-    // B9: Treat SIGTERM (-15) as clean stop if intentional
     final isCleanStop = _intentionalStop || code == 0 || code == -15;
 
     _state = _state.copyWith(
@@ -90,30 +93,75 @@ class BridgeService extends ChangeNotifier {
     _uptimeTimer = null;
   }
 
-  /// Kill orphaned server processes using the configured port
   Future<void> killOrphanedProcesses() async {
     try {
-      // Check if any node process is listening on our port
-      final lsofResult = await Process.run('lsof', [
-        '-i',
-        ':${_config.port}',
-        '-t',
-      ]);
-      if (lsofResult.exitCode == 0) {
-        final pids = lsofResult.stdout.toString().trim().split('\n');
-        for (final pid in pids) {
-          if (pid.trim().isEmpty) continue;
-          final pidNum = pid.trim();
+      if (Platform.isLinux || Platform.isMacOS) {
+        final lsofResult = await Process.run('lsof', [
+          '-i',
+          ':${_config.port}',
+          '-t',
+        ]);
+        if (lsofResult.exitCode == 0) {
+          final pids = lsofResult.stdout.toString().trim().split('\n');
+          for (final pid in pids) {
+            if (pid.trim().isEmpty) continue;
+            final pidNum = pid.trim();
 
-          // Verify the process is actually bridge-cli before killing
-          final cmdlineResult = await Process.run('cat', [
-            '/proc/$pidNum/cmdline',
-          ]);
-          if (cmdlineResult.exitCode == 0 &&
-              cmdlineResult.stdout.toString().contains('bridge-cli')) {
-            debugPrint('Killing orphaned bridge process $pidNum');
-            await Process.run('kill', [pidNum]);
-            await Future.delayed(const Duration(milliseconds: 200));
+            if (Platform.isLinux) {
+              final cmdlineResult = await Process.run('cat', [
+                '/proc/$pidNum/cmdline',
+              ]);
+              if (cmdlineResult.exitCode == 0 &&
+                  cmdlineResult.stdout.toString().contains('bridge-cli')) {
+                debugPrint('Killing orphaned bridge process $pidNum');
+                await Process.run('kill', [pidNum]);
+                await Future.delayed(const Duration(milliseconds: 200));
+              }
+            } else {
+              // macOS has no /proc; verify via `ps` instead so we don't
+              // kill an unrelated process that merely happens to be bound
+              // to the configured port.
+              final psResult = await Process.run('ps', [
+                '-p',
+                pidNum,
+                '-o',
+                'command=',
+              ]);
+              if (psResult.exitCode == 0 &&
+                  psResult.stdout.toString().contains('bridge-cli')) {
+                debugPrint('Killing orphaned bridge process $pidNum');
+                await Process.run('kill', [pidNum]);
+                await Future.delayed(const Duration(milliseconds: 200));
+              }
+            }
+          }
+        }
+      } else if (Platform.isWindows) {
+        final netstatResult = await Process.run('netstat', ['-ano', '-p', 'TCP']);
+        if (netstatResult.exitCode == 0) {
+          final lines = netstatResult.stdout.toString().split('\n');
+          for (final line in lines) {
+            if (line.contains(':${_config.port}') &&
+                line.contains('LISTENING')) {
+              final parts = line.trim().split(RegExp(r'\s+'));
+              if (parts.isNotEmpty) {
+                final pid = parts.last;
+                // netstat only gives the PID, not the command line; ask
+                // WMI for it so we don't force-kill an unrelated process
+                // that happens to be listening on this port.
+                final cmdResult = await Process.run('powershell', [
+                  '-NoProfile',
+                  '-Command',
+                  '(Get-CimInstance Win32_Process -Filter "ProcessId=$pid").CommandLine',
+                ]);
+                if (cmdResult.exitCode == 0 &&
+                    cmdResult.stdout.toString().contains('bridge-cli')) {
+                  debugPrint('Killing orphaned bridge process $pid');
+                  await Process.run('taskkill', ['/PID', pid, '/F']);
+                  await Future.delayed(const Duration(milliseconds: 200));
+                }
+              }
+            }
           }
         }
       }
@@ -141,27 +189,22 @@ class BridgeService extends ChangeNotifier {
     notifyListeners();
 
     try {
-      // Kill any orphaned processes using this port
       if (killExisting) {
         await killOrphanedProcesses();
       }
 
-      // Find bridge server path
       final serverPath = await _findServerPath();
 
-      // B22: Pass token via env instead of --token flag (avoids ps visibility)
+      final nodeExecutable = _nodeRuntimeService?.resolveExecutable(_config) ??
+          (_config.nodePath ?? 'node');
+
       final env = Map<String, String>.from(Platform.environment);
       env['FIGMA_PLUGIN_BRIDGE_TOKEN'] = _config.password;
 
-      // bridge-cli's --host only accepts these three loopback forms; fall
-      // back to the safe default rather than letting the process reject
-      // an old/free-typed value saved before the host field was
-      // restricted to this list.
       final host = validHosts.contains(_config.host)
           ? _config.host
           : '127.0.0.1';
 
-      // Build command args
       final args = [
         serverPath,
         'serve',
@@ -171,10 +214,8 @@ class BridgeService extends ChangeNotifier {
         _config.port.toString(),
       ];
 
-      // Start the server
-      await _processManager.startProcess('node', args, environment: env);
+      await _processManager.startProcess(nodeExecutable, args, environment: env);
 
-      // Token is now the user's password
       _state = _state.copyWith(
         status: ServerStatus.running,
         token: _config.password,
@@ -198,12 +239,10 @@ class BridgeService extends ChangeNotifier {
     notifyListeners();
 
     try {
-      // Stop our managed process
       if (_processManager.isRunning) {
         await _processManager.stopProcess();
       }
 
-      // Also kill any orphaned processes
       await killOrphanedProcesses();
 
       _state = ServerState(status: ServerStatus.stopped);
@@ -227,18 +266,12 @@ class BridgeService extends ChangeNotifier {
   }
 
   Future<String> _findServerPath() async {
-    // Try to get from installed runtime (copies from bundled assets if needed)
     try {
       return await RuntimeInstaller.getBridgeCliPath();
     } catch (e) {
       debugPrint('Runtime installer failed: $e');
     }
 
-    // Dev-mode convenience: when run via `flutter run` from the project
-    // root, the working directory is the project root itself, so the
-    // source asset is also reachable as a plain relative path (this does
-    // NOT work in a built/installed app, where rootBundle is the only way
-    // to reach bundled assets - that's what RuntimeInstaller uses above).
     const devPath = 'assets/bundled/bridge-cli.cjs';
     if (await File(devPath).exists()) {
       return devPath;
@@ -276,15 +309,6 @@ class BridgeService extends ChangeNotifier {
     _stdoutSub?.cancel();
     _stderrSub?.cancel();
     _exitCodeSub?.cancel();
-    // Stop our own managed process. Deliberately NOT calling
-    // killOrphanedProcesses() here: dispose() is synchronous and can't be
-    // awaited by its caller, but killOrphanedProcesses() spawns real `lsof`
-    // /`kill` subprocesses - fire-and-forgetting that from dispose() left
-    // async work (and OS processes) outliving the widget tree, which is
-    // exactly what surfaced as a "Timer still pending after dispose"
-    // failure under flutter_test. Orphan cleanup already happens
-    // explicitly in startServer() and stopServer(); it doesn't need to
-    // run again here too.
     _processManager.stopProcess();
     super.dispose();
   }

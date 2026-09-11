@@ -15,6 +15,10 @@ dependencies:
   path_provider: ^2.1.2
   url_launcher: ^6.2.5
   shared_preferences: ^2.2.2
+  archive: ^4.2.0
+  crypto: ^3.0.7
+  package_info_plus: ^10.2.1
+  pub_semver: ^2.2.1
 
 dev_dependencies:
   flutter_test:

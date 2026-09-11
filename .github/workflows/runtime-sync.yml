@@ -1,0 +1,184 @@
+name: Runtime Sync
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Upstream commit SHA to pin (leave empty for latest main)'
+        required: false
+        default: ''
+
+jobs:
+  sync:
+    name: Sync Runtime
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve upstream SHA
+        id: upstream
+        run: |
+          if [ -n "${{ github.event.inputs.ref }}" ]; then
+            echo "sha=${{ github.event.inputs.ref }}" >> $GITHUB_OUTPUT
+          else
+            SHA=$(curl -s "https://api.github.com/repos/superdoccimo/figma-mcp-free/commits/main" | jq -r '.sha')
+            echo "sha=$SHA" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check if already published
+        id: check
+        run: |
+          SHA="${{ steps.upstream.outputs.sha }}"
+          # Check if runtime-latest release exists with this SHA
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/tags/runtime-latest")
+          if [ "$RESPONSE" = "200" ]; then
+            BODY=$(curl -s "https://api.github.com/repos/${{ github.repository }}/releases/tags/runtime-latest" | jq -r '.body')
+            if echo "$BODY" | grep -q "$SHA"; then
+              echo "exists=true" >> $GITHUB_OUTPUT
+            else
+              echo "exists=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Checkout upstream
+        if: steps.check.outputs.exists != 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: superdoccimo/figma-mcp-free
+          ref: ${{ steps.upstream.outputs.sha }}
+          path: upstream
+
+      - name: Setup pnpm
+        if: steps.check.outputs.exists != 'true'
+        uses: pnpm/action-setup@v4
+        with:
+          version: '9.15.9'
+
+      - name: Setup Node.js
+        if: steps.check.outputs.exists != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+          cache-dependency-path: upstream/pnpm-lock.yaml
+
+      - name: Install dependencies
+        if: steps.check.outputs.exists != 'true'
+        working-directory: upstream
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        if: steps.check.outputs.exists != 'true'
+        working-directory: upstream
+        run: pnpm -r run build
+
+      - name: Build runtime bundle
+        if: steps.check.outputs.exists != 'true'
+        run: |
+          chmod +x tool/build_runtime_bundle.sh
+          tool/build_runtime_bundle.sh upstream runtime-build
+
+      - name: Verify runtime
+        if: steps.check.outputs.exists != 'true'
+        run: |
+          set -euo pipefail
+
+          echo "Verifying mcp-server responds to initialize..."
+          RESPONSE=$(printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"ci-smoke","version":"1.0"}}}' | timeout 10 node runtime-build/mcp-server.cjs)
+          echo "$RESPONSE"
+          echo "$RESPONSE" | grep -q '"result"' || { echo "::error::mcp-server did not return a result for initialize"; exit 1; }
+
+          echo "Verifying bridge-cli serve auth on /health..."
+          TOKEN="ci-smoke-test-token-please-ignore-0123456789"
+          node runtime-build/bridge-cli.cjs serve --port 18845 --token "$TOKEN" &
+          BRIDGE_PID=$!
+          trap 'kill $BRIDGE_PID 2>/dev/null || true' EXIT
+
+          READY=false
+          for i in $(seq 1 20); do
+            if curl -s -o /dev/null "http://127.0.0.1:18845/health"; then
+              READY=true
+              break
+            fi
+            sleep 0.5
+          done
+          [ "$READY" = "true" ] || { echo "::error::bridge-cli did not start listening on :18845"; exit 1; }
+
+          UNAUTH_CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:18845/health")
+          echo "Unauthenticated /health -> $UNAUTH_CODE"
+          [ "$UNAUTH_CODE" = "401" ] || { echo "::error::expected 401 for unauthenticated /health, got $UNAUTH_CODE"; exit 1; }
+
+          AUTH_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $TOKEN" "http://127.0.0.1:18845/health")
+          echo "Authenticated /health -> $AUTH_CODE"
+          [ "$AUTH_CODE" = "200" ] || { echo "::error::expected 200 for authenticated /health, got $AUTH_CODE"; exit 1; }
+
+          kill $BRIDGE_PID 2>/dev/null || true
+          wait $BRIDGE_PID 2>/dev/null || true
+          trap - EXIT
+
+          echo "Runtime verification passed"
+
+      - name: Create runtime zip
+        if: steps.check.outputs.exists != 'true'
+        run: |
+          cd runtime-build
+          zip -r ../runtime-${{ steps.upstream.outputs.sha }}.zip .
+          cd ..
+          sha256sum runtime-${{ steps.upstream.outputs.sha }}.zip > runtime-${{ steps.upstream.outputs.sha }}.zip.sha256
+
+      - name: Upload to runtime-latest release
+        if: steps.check.outputs.exists != 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: runtime-latest
+          name: Runtime Latest
+          body: |
+            Auto-synced from superdoccimo/figma-mcp-free @ ${{ steps.upstream.outputs.sha }}
+          files: |
+            runtime-${{ steps.upstream.outputs.sha }}.zip
+            runtime-${{ steps.upstream.outputs.sha }}.zip.sha256
+            runtime-build/runtime.json
+            runtime-build/VERSION
+          prerelease: false
+
+      - name: Create immutable release
+        if: steps.check.outputs.exists != 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: runtime-${{ steps.upstream.outputs.sha }}
+          name: Runtime ${{ steps.upstream.outputs.sha }}
+          body: |
+            Immutable release of figma-mcp-free @ ${{ steps.upstream.outputs.sha }}
+          files: |
+            runtime-${{ steps.upstream.outputs.sha }}.zip
+            runtime-${{ steps.upstream.outputs.sha }}.zip.sha256
+            runtime-build/runtime.json
+            runtime-build/VERSION
+          prerelease: false
+
+      - name: Update bundled assets PR
+        if: steps.check.outputs.exists != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b update-runtime-${{ steps.upstream.outputs.sha }}
+          cp runtime-build/mcp-server.cjs assets/bundled/mcp-server.cjs
+          cp runtime-build/bridge-cli.cjs assets/bundled/bridge-cli.cjs
+          cp runtime-build/VERSION assets/bundled/VERSION
+          cp runtime-build/runtime.json assets/bundled/runtime.json
+          cp -r runtime-build/plugin assets/bundled/plugin 2>/dev/null || true
+          git add assets/bundled/
+          git commit -m "chore: update bundled runtime to ${{ steps.upstream.outputs.sha }}"
+          git push origin update-runtime-${{ steps.upstream.outputs.sha }}
+          gh pr create --title "Update bundled runtime" \
+            --body "Auto-updates bundled runtime to figma-mcp-free @ ${{ steps.upstream.outputs.sha }}" \
+            --base main || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,23 +1,36 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:http/http.dart' as http;
+import 'package:package_info_plus/package_info_plus.dart';
 
 import '../models/app_update.dart';
 import '../core/constants.dart';
+import 'github_api.dart';
 
 class UpdateService extends ChangeNotifier {
   AppUpdate? _latestUpdate;
   bool _isChecking = false;
+  String _currentVersion = '';
+  bool _noReleasesYet = false;
 
   AppUpdate? get latestUpdate => _latestUpdate;
   bool get isChecking => _isChecking;
+  String get currentVersion => _currentVersion;
+  bool get noReleasesYet => _noReleasesYet;
 
-  /// False until AppConstants.githubOwner/githubRepo point at a real repo.
-  /// Checking against the placeholder repo would just 404 every time.
   bool get isUpdateEnabled =>
       AppConstants.githubOwner.isNotEmpty && AppConstants.githubRepo.isNotEmpty;
+
+  Future<void> init() async {
+    try {
+      final info = await PackageInfo.fromPlatform();
+      _currentVersion = info.version;
+      notifyListeners();
+    } catch (e) {
+      debugPrint('Failed to get package info: $e');
+      _currentVersion = '1.0.0';
+    }
+  }
 
   Future<void> checkForUpdates() async {
     if (!isUpdateEnabled) {
@@ -26,19 +39,26 @@ class UpdateService extends ChangeNotifier {
     }
 
     _isChecking = true;
+    _noReleasesYet = false;
     notifyListeners();
 
     try {
-      final url = Uri.parse(
+      // Ensure we have the current version
+      if (_currentVersion.isEmpty) {
+        await init();
+      }
+
+      final json = await GitHubApi.getJson(
         'https://api.github.com/repos/${AppConstants.githubOwner}/${AppConstants.githubRepo}/releases/latest',
       );
 
-      final response = await http.get(url).timeout(const Duration(seconds: 10));
-      if (response.statusCode == 200) {
-        final json = jsonDecode(response.body);
+      if (json != null) {
         _latestUpdate = AppUpdate.fromJson(json);
       } else {
-        debugPrint('Failed to check for updates: ${response.statusCode}');
+        // No releases yet (404)
+        _noReleasesYet = true;
+        _latestUpdate = null;
+        debugPrint('No releases found for ${AppConstants.githubOwner}/${AppConstants.githubRepo}');
       }
     } catch (e) {
       debugPrint('Update check error: $e');
@@ -48,8 +68,8 @@ class UpdateService extends ChangeNotifier {
     }
   }
 
-  bool hasUpdate() {
-    if (_latestUpdate == null) return false;
-    return _latestUpdate!.isNewerThan(AppConstants.appVersion);
+  bool get hasUpdate {
+    if (_latestUpdate == null || _currentVersion.isEmpty) return false;
+    return _latestUpdate!.isNewerThan(_currentVersion);
   }
 }
