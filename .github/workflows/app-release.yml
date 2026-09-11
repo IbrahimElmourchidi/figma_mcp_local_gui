@@ -24,7 +24,7 @@ jobs:
       - name: Verify CHANGELOG.md has section
         run: |
           TAG="${GITHUB_REF#refs/tags/v}"
-          if ! grep -q "## $TAG" CHANGELOG.md; then
+          if ! grep -qE "^##.*$TAG" CHANGELOG.md; then
             echo "error: CHANGELOG.md missing section for $TAG"
             exit 1
           fi
@@ -101,7 +101,7 @@ jobs:
         run: |
           TAG="${GITHUB_REF#refs/tags/}"
           # Extract section between this tag and the next ## heading
-          awk "/^## $TAG/{found=1; next} /^## /{if(found) exit} found{print}" CHANGELOG.md > release_body.txt
+          awk "/^##.*$TAG/{found=1; next} /^## /{if(found) exit} found{print}" CHANGELOG.md > release_body.txt
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
