@@ -5,6 +5,7 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+  workflow_dispatch:
 
 jobs:
   analyze:
@@ -15,9 +16,7 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          # Must satisfy pubspec.yaml's `sdk: ^3.13.2` constraint - 3.24.x
-          # bundles a Dart SDK below that floor and fails `flutter pub get`.
-          flutter-version: '3.47.2'
+          flutter-version: '3.24.x'
           channel: stable
 
       - name: Install dependencies
