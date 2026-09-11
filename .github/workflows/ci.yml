@@ -16,7 +16,9 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.x'
+          # Must satisfy pubspec.yaml's `sdk: ^3.13.2` constraint - 3.24.x
+          # bundles a Dart SDK below that floor and fails `flutter pub get`.
+          flutter-version: '3.47.2'
           channel: stable
 
       - name: Install dependencies

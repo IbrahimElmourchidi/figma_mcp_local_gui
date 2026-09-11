@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-09-11
+
+### Added
+- NodeRuntimeService: self-provisions Node.js with SHA-256 verification
+- RuntimeUpdateService: checks upstream SHA, staged swap with rollback
+- BootstrapService: ordered init sequence (node, runtime, updates)
+- Update banner widget for app and runtime update notifications
+- BootstrapScreen for first-run progress display
+- On-device build fallback (opt-in from Settings)
+- CI/CD: ci.yml, runtime-sync.yml, app-release.yml workflows
+- Cross-platform fixes (Windows config dir, orphan cleanup, Figma detection)
+
+### Changed
+- Plugin files sourced from runtime directory instead of bundled assets
+- ui.html port-substituted to match configured bridge port
+- Figma plugin ID configurable from Settings (no longer hardcoded)
+- opencode config written cross-platform (XDG_CONFIG_HOME, APPDATA)
+- System Checker reports on managed Node.js runtime
+
+### Fixed
+- Windows support: correct config directory, orphan cleanup, Figma detection
+- Plugin manifest uses user's Figma plugin ID instead of hardcoded value
+
 ## [1.0.0] - 2025-09-11
 
 ### Added
