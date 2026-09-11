@@ -1,0 +1,20 @@
+{
+  "name": "figma-mcp-free Local Bridge",
+  "id": "1679462793087496067",
+  "api": "1.0.0",
+  "editorType": [
+    "figma"
+  ],
+  "main": "code.js",
+  "ui": "ui.html",
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ],
+    "devAllowedDomains": [
+      "http://127.0.0.1:3845",
+      "http://localhost:3845"
+    ]
+  }
+}
