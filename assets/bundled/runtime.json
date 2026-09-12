@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "upstreamRepo": "superdoccimo/figma-mcp-free",
+  "upstreamSha": "7159a5364feeda629b6a5a1c6f68e7fc5c774b57",
+  "upstreamCommittedAt": "2026-09-12T06:27:41Z",
+  "builtAt": "2026-09-12T06:27:41Z",
+  "builtBy": "true",
+  "esbuildVersion": "0.28.2",
+  "nodeTarget": "node18",
+  "files": {
+    "mcp-server.cjs": "8bbd8caacb6c0bcd2c3c7e9e17e8c6af29f0017222c4fd59b44b04f38da581a0",
+    "bridge-cli.cjs": "a6987d6c2d0509436bc4f45e647b306ec951bf7ccf1d2169146b6fa8a10fe32b",
+    "plugin/code.js": "539aaa103dcec0f38d6ba59d6a33f8e59caccfeb40d11d6c29fa993217d6d624",
+    "plugin/ui.html": "ef00c66cc4b04f46c53b081ec412d947bfa3340732418b23a3c01bc2ab059dd1",
+    "plugin/manifest.template.json": "16dcb02d611383b348c134f255bfd13159785e5d160ed00a8e80a40053f9aaf1"
+  }
+}
