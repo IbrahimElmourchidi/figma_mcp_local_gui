@@ -33,9 +33,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js
 var require_code = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.regexpCode = exports2.getEsmExportName = exports2.getProperty = exports2.safeStringify = exports2.stringify = exports2.strConcat = exports2.addCodeArg = exports2.str = exports2._ = exports2.nil = exports2._Code = exports2.Name = exports2.IDENTIFIER = exports2._CodeOrName = void 0;
@@ -187,9 +187,9 @@ var require_code = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js
 var require_scope = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ValueScope = exports2.ValueScopeName = exports2.Scope = exports2.varKinds = exports2.UsedValueState = void 0;
@@ -332,9 +332,9 @@ var require_scope = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js
 var require_codegen = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.or = exports2.and = exports2.not = exports2.CodeGen = exports2.operators = exports2.varKinds = exports2.ValueScopeName = exports2.ValueScope = exports2.Scope = exports2.Name = exports2.regexpCode = exports2.stringify = exports2.getProperty = exports2.nil = exports2.strConcat = exports2.str = exports2._ = void 0;
@@ -1052,9 +1052,9 @@ var require_codegen = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js
 var require_util = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.checkStrictMode = exports2.getErrorPath = exports2.Type = exports2.useFunc = exports2.setEvaluated = exports2.evaluatedPropsToName = exports2.mergeEvaluated = exports2.eachItem = exports2.unescapeJsonPointer = exports2.escapeJsonPointer = exports2.escapeFragment = exports2.unescapeFragment = exports2.schemaRefOrVal = exports2.schemaHasRulesButRef = exports2.schemaHasRules = exports2.checkUnknownRules = exports2.alwaysValidSchema = exports2.toHash = void 0;
@@ -1219,9 +1219,9 @@ var require_util = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js
 var require_names = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -1258,9 +1258,9 @@ var require_names = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js
 var require_errors = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.extendErrors = exports2.resetErrorsCount = exports2.reportExtraError = exports2.reportError = exports2.keyword$DataError = exports2.keywordError = void 0;
@@ -1380,9 +1380,9 @@ var require_errors = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js
 var require_boolSchema = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.boolOrEmptySchema = exports2.topBoolOrEmptySchema = void 0;
@@ -1431,9 +1431,9 @@ var require_boolSchema = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js
 var require_rules = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getRules = exports2.isJSONType = void 0;
@@ -1462,9 +1462,9 @@ var require_rules = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js
 var require_applicability = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.shouldUseRule = exports2.shouldUseGroup = exports2.schemaHasRulesForType = void 0;
@@ -1485,9 +1485,9 @@ var require_applicability = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js
 var require_dataType = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.reportTypeError = exports2.checkDataTypes = exports2.checkDataType = exports2.coerceAndCheckDataType = exports2.getJSONTypes = exports2.getSchemaTypes = exports2.DataType = void 0;
@@ -1669,9 +1669,9 @@ var require_dataType = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js
 var require_defaults = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.assignDefaults = void 0;
@@ -1706,9 +1706,9 @@ var require_defaults = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js
 var require_code2 = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateUnion = exports2.validateArray = exports2.usePattern = exports2.callValidateCode = exports2.schemaProperties = exports2.allSchemaProperties = exports2.noPropertyInData = exports2.propertyInData = exports2.isOwnProperty = exports2.hasPropFunc = exports2.reportMissingProp = exports2.checkMissingProp = exports2.checkReportMissingProp = void 0;
@@ -1839,9 +1839,9 @@ var require_code2 = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js
 var require_keyword = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateKeywordUsage = exports2.validSchemaType = exports2.funcKeywordCode = exports2.macroKeywordCode = void 0;
@@ -1957,9 +1957,9 @@ var require_keyword = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js
 var require_subschema = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.extendSubschemaMode = exports2.extendSubschemaData = exports2.getSubschema = void 0;
@@ -2040,9 +2040,9 @@ var require_subschema = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js
+// upstream/node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js
 var require_fast_deep_equal = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js"(exports2, module2) {
+  "upstream/node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js"(exports2, module2) {
     "use strict";
     module2.exports = function equal(a, b) {
       if (a === b) return true;
@@ -2075,9 +2075,9 @@ var require_fast_deep_equal = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js
+// upstream/node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js
 var require_json_schema_traverse = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js"(exports2, module2) {
+  "upstream/node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js"(exports2, module2) {
     "use strict";
     var traverse = module2.exports = function(schema, opts, cb) {
       if (typeof opts == "function") {
@@ -2163,9 +2163,9 @@ var require_json_schema_traverse = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js
 var require_resolve = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getSchemaRefs = exports2.resolveUrl = exports2.normalizeId = exports2._getFullPath = exports2.getFullPath = exports2.inlineRef = void 0;
@@ -2319,9 +2319,9 @@ var require_resolve = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js
 var require_validate = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getData = exports2.KeywordCxt = exports2.validateFunctionCode = void 0;
@@ -2827,9 +2827,9 @@ var require_validate = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js
 var require_validation_error = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var ValidationError = class extends Error {
@@ -2843,9 +2843,9 @@ var require_validation_error = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js
 var require_ref_error = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var resolve_1 = require_resolve();
@@ -2860,9 +2860,9 @@ var require_ref_error = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js
 var require_compile = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.resolveSchema = exports2.getCompilingSchema = exports2.resolveRef = exports2.compileSchema = exports2.SchemaEnv = void 0;
@@ -3084,9 +3084,9 @@ var require_compile = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json
 var require_data = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json"(exports2, module2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json"(exports2, module2) {
     module2.exports = {
       $id: "https://raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json#",
       description: "Meta-schema for $data reference (JSON AnySchema extension proposal)",
@@ -3103,12 +3103,13 @@ var require_data = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/utils.js
+// upstream/node_modules/.pnpm/fast-uri@3.1.8/node_modules/fast-uri/lib/utils.js
 var require_utils = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/utils.js"(exports2, module2) {
+  "upstream/node_modules/.pnpm/fast-uri@3.1.8/node_modules/fast-uri/lib/utils.js"(exports2, module2) {
     "use strict";
     var isUUID = RegExp.prototype.test.bind(/^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/iu);
     var isIPv4 = RegExp.prototype.test.bind(/^(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)$/u);
+    var isPort = RegExp.prototype.test.bind(/^\d*$/u);
     var isHexPair = RegExp.prototype.test.bind(/^[\da-f]{2}$/iu);
     var isUnreserved = RegExp.prototype.test.bind(/^[\da-z\-._~]$/iu);
     var isPathCharacter = RegExp.prototype.test.bind(/^[A-Za-z0-9\-._~!$&'()*+,;=:@/]$/u);
@@ -3574,8 +3575,12 @@ var require_utils = __commonJS({
         uriTokens.push(host);
       }
       if (typeof component.port === "number" || typeof component.port === "string") {
+        const port = String(component.port);
+        if (!isPort(port)) {
+          throw new TypeError("URI port is malformed.");
+        }
         uriTokens.push(":");
-        uriTokens.push(String(component.port));
+        uriTokens.push(port);
       }
       return uriTokens.length ? uriTokens.join("") : void 0;
     }
@@ -3600,9 +3605,9 @@ var require_utils = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/schemes.js
+// upstream/node_modules/.pnpm/fast-uri@3.1.8/node_modules/fast-uri/lib/schemes.js
 var require_schemes = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/lib/schemes.js"(exports2, module2) {
+  "upstream/node_modules/.pnpm/fast-uri@3.1.8/node_modules/fast-uri/lib/schemes.js"(exports2, module2) {
     "use strict";
     var { isUUID } = require_utils();
     var URN_REG = /^([\da-z][\d\-a-z]{0,31}):((?:[\w!$'()*+,\-./:;=@]|%[\da-f]{2})+)$/iu;
@@ -3811,9 +3816,9 @@ var require_schemes = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/index.js
+// upstream/node_modules/.pnpm/fast-uri@3.1.8/node_modules/fast-uri/index.js
 var require_fast_uri = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/fast-uri@3.1.6/node_modules/fast-uri/index.js"(exports2, module2) {
+  "upstream/node_modules/.pnpm/fast-uri@3.1.8/node_modules/fast-uri/index.js"(exports2, module2) {
     "use strict";
     var { normalizeIPv6, removeDotSegments, recomposeAuthority, normalizePercentEncoding, normalizePathEncoding, serializePathEncoding, normalizeQueryFragmentEncoding, encodeQuery, encodeFragment, reescapeHostDelimiters, isIPv4, nonSimpleDomain } = require_utils();
     var { SCHEMES, getSchemeHandler } = require_schemes();
@@ -4018,12 +4023,15 @@ var require_fast_uri = __commonJS({
       }
       return false;
     }
+    function isIPLiteral(host) {
+      return host[0] === "[" && host[host.length - 1] === "]";
+    }
     function hasMalformedComponentPercentEncoding(matches) {
       const host = matches[4];
-      return hasMalformedPercentEncoding(matches[3]) || host !== void 0 && !(host[0] === "[" && host[host.length - 1] === "]") && hasMalformedPercentEncoding(host) || hasMalformedPercentEncoding(matches[6]) || hasMalformedPercentEncoding(matches[7]) || hasMalformedPercentEncoding(matches[8]);
+      return hasMalformedPercentEncoding(matches[3]) || host !== void 0 && !isIPLiteral(host) && hasMalformedPercentEncoding(host) || hasMalformedPercentEncoding(matches[6]) || hasMalformedPercentEncoding(matches[7]) || hasMalformedPercentEncoding(matches[8]);
     }
     function canonicalizeHost(parsed, options, schemeHandler, isIP) {
-      if (!options.unicodeSupport && (!schemeHandler || !schemeHandler.unicodeSupport) && parsed.host && parsed.host[0] !== "[" && (options.domainHost || schemeHandler && schemeHandler.domainHost) && isIP === false && nonSimpleDomain(parsed.host)) {
+      if (!options.unicodeSupport && (!schemeHandler || !schemeHandler.unicodeSupport) && parsed.host && !isIPLiteral(parsed.host) && (options.domainHost || schemeHandler && schemeHandler.domainHost) && isIP === false && nonSimpleDomain(parsed.host)) {
         try {
           parsed.host = new URL("http://" + parsed.host).hostname;
         } catch (e) {
@@ -4110,10 +4118,11 @@ var require_fast_uri = __commonJS({
         if (parsed.host) {
           const ipv4result = isIPv4(parsed.host);
           if (ipv4result === false) {
-            const bracketedIPLiteral = parsed.host[0] === "[" && parsed.host[parsed.host.length - 1] === "]";
+            const bracketedIPLiteral = isIPLiteral(parsed.host);
+            const hasIPLiteralBracket = parsed.host.indexOf("[") !== -1 || parsed.host.indexOf("]") !== -1;
             const ipv6result = normalizeIPv6(parsed.host);
             isIP = ipv6result.isIPV6 || ipv6result.isIPVFuture === true;
-            malformedIPLiteral = bracketedIPLiteral && ipv6result.error === true;
+            malformedIPLiteral = hasIPLiteralBracket && (!bracketedIPLiteral || ipv6result.error === true);
             parsed.host = isIP ? ipv6result.host : ipv6result.host.toLowerCase();
             if (malformedIPLiteral) {
               parsed.error = parsed.error || "URI host is malformed.";
@@ -4136,14 +4145,17 @@ var require_fast_uri = __commonJS({
           parsed.error = parsed.error || "URI is not a " + options.reference + " reference.";
         }
         const schemeHandler = getSchemeHandler(options.scheme || parsed.scheme);
-        malformedHost = canonicalizeHost(parsed, options, schemeHandler, isIP);
-        if (!schemeHandler || schemeHandler && !schemeHandler.skipNormalize) {
-          if (uri.indexOf("%") !== -1) {
-            if (parsed.host !== void 0 && !malformedIPLiteral) {
-              const host = isIP ? parsed.host : normalizePercentEncoding(parsed.host, true);
-              parsed.host = reescapeHostDelimiters(host, isIP);
-            }
+        if (!malformedIPLiteral) {
+          malformedHost = canonicalizeHost(parsed, options, schemeHandler, isIP);
+        }
+        if (uri.indexOf("%") !== -1 && parsed.host !== void 0 && !malformedIPLiteral) {
+          let host = isIP ? parsed.host : normalizePercentEncoding(parsed.host, true);
+          if (!isIP) {
+            host = normalizePercentEncoding(host.toLowerCase());
           }
+          parsed.host = reescapeHostDelimiters(host, isIP);
+        }
+        if (!schemeHandler || schemeHandler && !schemeHandler.skipNormalize) {
           if (parsed.path) {
             parsed.path = normalizePathEncoding(parsed.path);
           }
@@ -4210,9 +4222,9 @@ var require_fast_uri = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js
 var require_uri = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var uri = require_fast_uri();
@@ -4221,9 +4233,9 @@ var require_uri = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js
 var require_core = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.CodeGen = exports2.Name = exports2.nil = exports2.stringify = exports2.str = exports2._ = exports2.KeywordCxt = void 0;
@@ -4832,9 +4844,9 @@ var require_core = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js
 var require_id = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var def = {
@@ -4847,9 +4859,9 @@ var require_id = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js
 var require_ref = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.callRef = exports2.getValidate = void 0;
@@ -4969,9 +4981,9 @@ var require_ref = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js
 var require_core2 = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var id_1 = require_id();
@@ -4990,9 +5002,9 @@ var require_core2 = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js
 var require_limitNumber = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5022,9 +5034,9 @@ var require_limitNumber = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js
 var require_multipleOf = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5050,9 +5062,9 @@ var require_multipleOf = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js
 var require_ucs2length = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     function ucs2length(str) {
@@ -5076,9 +5088,9 @@ var require_ucs2length = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js
 var require_limitLength = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5108,9 +5120,9 @@ var require_limitLength = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js
 var require_pattern = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -5145,9 +5157,9 @@ var require_pattern = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js
 var require_limitProperties = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5174,9 +5186,9 @@ var require_limitProperties = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js
 var require_required = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -5256,9 +5268,9 @@ var require_required = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js
 var require_limitItems = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5285,9 +5297,9 @@ var require_limitItems = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js
 var require_equal = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var equal = require_fast_deep_equal();
@@ -5296,9 +5308,9 @@ var require_equal = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js
 var require_uniqueItems = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var dataType_1 = require_dataType();
@@ -5363,9 +5375,9 @@ var require_uniqueItems = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js
 var require_const = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5392,9 +5404,9 @@ var require_const = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js
 var require_enum = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5441,9 +5453,9 @@ var require_enum = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js
 var require_validation = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var limitNumber_1 = require_limitNumber();
@@ -5479,9 +5491,9 @@ var require_validation = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js
 var require_additionalItems = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateAdditionalItems = void 0;
@@ -5532,9 +5544,9 @@ var require_additionalItems = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js
 var require_items = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateTuple = void 0;
@@ -5589,9 +5601,9 @@ var require_items = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js
 var require_prefixItems = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var items_1 = require_items();
@@ -5606,9 +5618,9 @@ var require_prefixItems = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js
 var require_items2020 = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5641,9 +5653,9 @@ var require_items2020 = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js
 var require_contains = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5735,9 +5747,9 @@ var require_contains = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js
 var require_dependencies = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateSchemaDeps = exports2.validatePropertyDeps = exports2.error = void 0;
@@ -5829,9 +5841,9 @@ var require_dependencies = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js
 var require_propertyNames = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5872,9 +5884,9 @@ var require_propertyNames = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js
 var require_additionalProperties = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -5978,9 +5990,9 @@ var require_additionalProperties = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js
 var require_properties = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var validate_1 = require_validate();
@@ -6036,9 +6048,9 @@ var require_properties = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js
 var require_patternProperties = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -6110,9 +6122,9 @@ var require_patternProperties = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js
 var require_not = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var util_1 = require_util();
@@ -6141,9 +6153,9 @@ var require_not = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js
 var require_anyOf = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -6158,9 +6170,9 @@ var require_anyOf = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js
 var require_oneOf = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6216,9 +6228,9 @@ var require_oneOf = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js
 var require_allOf = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var util_1 = require_util();
@@ -6243,9 +6255,9 @@ var require_allOf = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js
 var require_if = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6312,9 +6324,9 @@ var require_if = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js
 var require_thenElse = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var util_1 = require_util();
@@ -6330,9 +6342,9 @@ var require_thenElse = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js
 var require_applicator = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var additionalItems_1 = require_additionalItems();
@@ -6378,9 +6390,9 @@ var require_applicator = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js
 var require_format = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6468,9 +6480,9 @@ var require_format = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js
 var require_format2 = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var format_1 = require_format();
@@ -6479,9 +6491,9 @@ var require_format2 = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js
 var require_metadata = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.contentVocabulary = exports2.metadataVocabulary = void 0;
@@ -6502,9 +6514,9 @@ var require_metadata = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js
 var require_draft7 = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var core_1 = require_core2();
@@ -6524,9 +6536,9 @@ var require_draft7 = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js
 var require_types = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.DiscrError = void 0;
@@ -6538,9 +6550,9 @@ var require_types = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js
 var require_discriminator = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6643,9 +6655,9 @@ var require_discriminator = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json
 var require_json_schema_draft_07 = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json"(exports2, module2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json"(exports2, module2) {
     module2.exports = {
       $schema: "http://json-schema.org/draft-07/schema#",
       $id: "http://json-schema.org/draft-07/schema#",
@@ -6800,9 +6812,9 @@ var require_json_schema_draft_07 = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js
+// upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js
 var require_ajv = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js"(exports2, module2) {
+  "upstream/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js"(exports2, module2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.MissingRefError = exports2.ValidationError = exports2.CodeGen = exports2.Name = exports2.nil = exports2.stringify = exports2.str = exports2._ = exports2.KeywordCxt = exports2.Ajv = void 0;
@@ -6870,9 +6882,9 @@ var require_ajv = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js
+// upstream/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js
 var require_formats = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.formatNames = exports2.fastFormats = exports2.fullFormats = void 0;
@@ -7073,9 +7085,9 @@ var require_formats = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js
+// upstream/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js
 var require_limit = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js"(exports2) {
+  "upstream/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.formatLimitDefinition = void 0;
@@ -7145,9 +7157,9 @@ var require_limit = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js
+// upstream/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js
 var require_dist = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js"(exports2, module2) {
+  "upstream/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js"(exports2, module2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var formats_1 = require_formats();
@@ -7187,7 +7199,7 @@ var require_dist = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/external.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/external.js
 var external_exports = {};
 __export(external_exports, {
   BRAND: () => BRAND,
@@ -7299,7 +7311,7 @@ __export(external_exports, {
   void: () => voidType
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/util.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/util.js
 var util;
 (function(util2) {
   util2.assertEqual = (_) => {
@@ -7433,7 +7445,7 @@ var getParsedType = (data) => {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/ZodError.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/ZodError.js
 var ZodIssueCode = util.arrayToEnum([
   "invalid_type",
   "invalid_literal",
@@ -7551,7 +7563,7 @@ ZodError.create = (issues) => {
   return error2;
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/locales/en.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/locales/en.js
 var errorMap = (issue2, _ctx) => {
   let message;
   switch (issue2.code) {
@@ -7654,7 +7666,7 @@ var errorMap = (issue2, _ctx) => {
 };
 var en_default = errorMap;
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/errors.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/errors.js
 var overrideErrorMap = en_default;
 function setErrorMap(map) {
   overrideErrorMap = map;
@@ -7663,7 +7675,7 @@ function getErrorMap() {
   return overrideErrorMap;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/parseUtil.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/parseUtil.js
 var makeIssue = (params) => {
   const { data, path, errorMaps, issueData } = params;
   const fullPath = [...path, ...issueData.path || []];
@@ -7773,14 +7785,14 @@ var isDirty = (x) => x.status === "dirty";
 var isValid = (x) => x.status === "valid";
 var isAsync = (x) => typeof Promise !== "undefined" && x instanceof Promise;
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/errorUtil.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/helpers/errorUtil.js
 var errorUtil;
 (function(errorUtil2) {
   errorUtil2.errToObj = (message) => typeof message === "string" ? { message } : message || {};
   errorUtil2.toString = (message) => typeof message === "string" ? message : message?.message;
 })(errorUtil || (errorUtil = {}));
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/types.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v3/types.js
 var ParseInputLazyPath = class {
   constructor(parent, value, path, key) {
     this._cachedPath = [];
@@ -11228,7 +11240,7 @@ var coerce = {
 };
 var NEVER = INVALID;
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/core.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/core.js
 var NEVER2 = Object.freeze({
   status: "aborted"
 });
@@ -11287,7 +11299,7 @@ function config(newConfig) {
   return globalConfig;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/util.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/util.js
 var util_exports = {};
 __export(util_exports, {
   BIGINT_FORMAT_RANGES: () => BIGINT_FORMAT_RANGES,
@@ -11808,7 +11820,7 @@ var Class = class {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/errors.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/errors.js
 var initializer = (inst, def) => {
   inst.name = "$ZodError";
   Object.defineProperty(inst, "_zod", {
@@ -11883,7 +11895,7 @@ function formatError(error2, _mapper) {
   return fieldErrors;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/parse.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/parse.js
 var _parse = (_Err) => (schema, value, _ctx, _params) => {
   const ctx = _ctx ? Object.assign(_ctx, { async: false }) : { async: false };
   const result = schema._zod.run({ value, issues: [] }, ctx);
@@ -11935,7 +11947,7 @@ var _safeParseAsync = (_Err) => async (schema, value, _ctx) => {
 };
 var safeParseAsync = /* @__PURE__ */ _safeParseAsync($ZodRealError);
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/regexes.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/regexes.js
 var cuid = /^[cC][^\s-]{8,}$/;
 var cuid2 = /^[0-9a-z]+$/;
 var ulid = /^[0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{26}$/;
@@ -11993,7 +12005,7 @@ var _null = /null/i;
 var lowercase = /^[^A-Z]*$/;
 var uppercase = /^[^a-z]*$/;
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/checks.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/checks.js
 var $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
   var _a;
   inst._zod ?? (inst._zod = {});
@@ -12378,7 +12390,7 @@ var $ZodCheckOverwrite = /* @__PURE__ */ $constructor("$ZodCheckOverwrite", (ins
   };
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/doc.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/doc.js
 var Doc = class {
   constructor(args = []) {
     this.content = [];
@@ -12414,14 +12426,14 @@ var Doc = class {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/versions.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/versions.js
 var version = {
   major: 4,
   minor: 0,
   patch: 0
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/schemas.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/schemas.js
 var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   var _a;
   inst ?? (inst = {});
@@ -13659,7 +13671,7 @@ function handleRefineResult(result, payload, input, inst) {
   }
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/locales/en.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/locales/en.js
 var parsedType = (data) => {
   const t = typeof data;
   switch (t) {
@@ -13777,7 +13789,7 @@ function en_default2() {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/registries.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/registries.js
 var $ZodRegistry = class {
   constructor() {
     this._map = /* @__PURE__ */ new Map();
@@ -13825,7 +13837,7 @@ function registry() {
 }
 var globalRegistry = /* @__PURE__ */ registry();
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/api.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/api.js
 function _string(Class2, params) {
   return new Class2({
     type: "string",
@@ -14264,7 +14276,7 @@ function _refine(Class2, fn, _params) {
   return schema;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/to-json-schema.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/core/to-json-schema.js
 var JSONSchemaGenerator = class {
   constructor(params) {
     this.counter = 0;
@@ -15031,7 +15043,7 @@ function isTransforming(_schema, _ctx) {
   throw new Error(`Unknown schema type: ${def.type}`);
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/mini/schemas.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/mini/schemas.js
 var ZodMiniType = /* @__PURE__ */ $constructor("ZodMiniType", (inst, def) => {
   if (!inst._zod)
     throw new Error("Uninitialized schema in ZodMiniType.");
@@ -15077,7 +15089,7 @@ function object(shape, params) {
   return new ZodMiniObject(def);
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js
 function isZ4Schema(s) {
   const schema = s;
   return !!schema._zod;
@@ -15237,7 +15249,7 @@ function getLiteralValue(schema) {
   return void 0;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/iso.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/iso.js
 var iso_exports2 = {};
 __export(iso_exports2, {
   ZodISODate: () => ZodISODate,
@@ -15278,7 +15290,7 @@ function duration2(params) {
   return _isoDuration(ZodISODuration, params);
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/errors.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/errors.js
 var initializer2 = (inst, issues) => {
   $ZodError.init(inst, issues);
   inst.name = "ZodError";
@@ -15312,13 +15324,13 @@ var ZodRealError = $constructor("ZodError", initializer2, {
   Parent: Error
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/parse.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/parse.js
 var parse2 = /* @__PURE__ */ _parse(ZodRealError);
 var parseAsync2 = /* @__PURE__ */ _parseAsync(ZodRealError);
 var safeParse3 = /* @__PURE__ */ _safeParse(ZodRealError);
 var safeParseAsync3 = /* @__PURE__ */ _safeParseAsync(ZodRealError);
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/schemas.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/schemas.js
 var ZodType2 = /* @__PURE__ */ $constructor("ZodType", (inst, def) => {
   $ZodType.init(inst, def);
   inst.def = def;
@@ -15929,10 +15941,10 @@ function preprocess(fn, schema) {
   return pipe(transform(fn), schema);
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/external.js
+// upstream/node_modules/.pnpm/zod@3.25.76/node_modules/zod/v4/classic/external.js
 config(en_default2());
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js
 var LATEST_PROTOCOL_VERSION = "2025-11-25";
 var SUPPORTED_PROTOCOL_VERSIONS = [LATEST_PROTOCOL_VERSION, "2025-06-18", "2025-03-26", "2024-11-05", "2024-10-07"];
 var RELATED_TASK_META_KEY = "io.modelcontextprotocol/related-task";
@@ -17463,12 +17475,12 @@ var UrlElicitationRequiredError = class extends McpError {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js
 function isTerminal(status) {
   return status === "completed" || status === "failed" || status === "cancelled";
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/Options.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/Options.js
 var ignoreOverride = /* @__PURE__ */ Symbol("Let zodToJsonSchema decide on which parser to use");
 var defaultOptions = {
   name: void 0,
@@ -17502,7 +17514,7 @@ var getDefaultOptions = (options) => typeof options === "string" ? {
   ...options
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/Refs.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/Refs.js
 var getRefs = (options) => {
   const _options = getDefaultOptions(options);
   const currentPath = _options.name !== void 0 ? [..._options.basePath, _options.definitionPath, _options.name] : _options.basePath;
@@ -17523,7 +17535,7 @@ var getRefs = (options) => {
   };
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/errorMessages.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/errorMessages.js
 function addErrorMessage(res, key, errorMessage, refs) {
   if (!refs?.errorMessages)
     return;
@@ -17539,7 +17551,7 @@ function setResponseValueAndErrors(res, key, value, errorMessage, refs) {
   addErrorMessage(res, key, errorMessage, refs);
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js
 var getRelativePath = (pathA, pathB) => {
   let i = 0;
   for (; i < pathA.length && i < pathB.length; i++) {
@@ -17549,7 +17561,7 @@ var getRelativePath = (pathA, pathB) => {
   return [(pathA.length - i).toString(), ...pathB.slice(i)].join("/");
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/any.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/any.js
 function parseAnyDef(refs) {
   if (refs.target !== "openAi") {
     return {};
@@ -17565,7 +17577,7 @@ function parseAnyDef(refs) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/array.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/array.js
 function parseArrayDef(def, refs) {
   const res = {
     type: "array"
@@ -17589,7 +17601,7 @@ function parseArrayDef(def, refs) {
   return res;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js
 function parseBigintDef(def, refs) {
   const res = {
     type: "integer",
@@ -17635,24 +17647,24 @@ function parseBigintDef(def, refs) {
   return res;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js
 function parseBooleanDef() {
   return {
     type: "boolean"
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js
 function parseBrandedDef(_def, refs) {
   return parseDef(_def.type._def, refs);
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js
 var parseCatchDef = (def, refs) => {
   return parseDef(def.innerType._def, refs);
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/date.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/date.js
 function parseDateDef(def, refs, overrideDateStrategy) {
   const strategy = overrideDateStrategy ?? refs.dateStrategy;
   if (Array.isArray(strategy)) {
@@ -17711,7 +17723,7 @@ var integerDateParser = (def, refs) => {
   return res;
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/default.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/default.js
 function parseDefaultDef(_def, refs) {
   return {
     ...parseDef(_def.innerType._def, refs),
@@ -17719,12 +17731,12 @@ function parseDefaultDef(_def, refs) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js
 function parseEffectsDef(_def, refs) {
   return refs.effectStrategy === "input" ? parseDef(_def.schema._def, refs) : parseAnyDef(refs);
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js
 function parseEnumDef(def) {
   return {
     type: "string",
@@ -17732,7 +17744,7 @@ function parseEnumDef(def) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js
 var isJsonSchema7AllOfType = (type) => {
   if ("type" in type && type.type === "string")
     return false;
@@ -17774,7 +17786,7 @@ function parseIntersectionDef(def, refs) {
   } : void 0;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js
 function parseLiteralDef(def, refs) {
   const parsedType2 = typeof def.value;
   if (parsedType2 !== "bigint" && parsedType2 !== "number" && parsedType2 !== "boolean" && parsedType2 !== "string") {
@@ -17794,7 +17806,7 @@ function parseLiteralDef(def, refs) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/string.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/string.js
 var emojiRegex2 = void 0;
 var zodPatterns = {
   /**
@@ -18119,7 +18131,7 @@ function stringifyRegExpWithFlags(regex, refs) {
   return pattern;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/record.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/record.js
 function parseRecordDef(def, refs) {
   if (refs.target === "openAi") {
     console.warn("Warning: OpenAI may not support records in schemas! Try an array of key-value pairs instead.");
@@ -18171,7 +18183,7 @@ function parseRecordDef(def, refs) {
   return schema;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/map.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/map.js
 function parseMapDef(def, refs) {
   if (refs.mapStrategy === "record") {
     return parseRecordDef(def, refs);
@@ -18196,7 +18208,7 @@ function parseMapDef(def, refs) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js
 function parseNativeEnumDef(def) {
   const object3 = def.values;
   const actualKeys = Object.keys(def.values).filter((key) => {
@@ -18210,7 +18222,7 @@ function parseNativeEnumDef(def) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/never.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/never.js
 function parseNeverDef(refs) {
   return refs.target === "openAi" ? void 0 : {
     not: parseAnyDef({
@@ -18220,7 +18232,7 @@ function parseNeverDef(refs) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/null.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/null.js
 function parseNullDef(refs) {
   return refs.target === "openApi3" ? {
     enum: ["null"],
@@ -18230,7 +18242,7 @@ function parseNullDef(refs) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/union.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/union.js
 var primitiveMappings = {
   ZodString: "string",
   ZodNumber: "number",
@@ -18298,7 +18310,7 @@ var asAnyOf = (def, refs) => {
   return anyOf.length ? { anyOf } : void 0;
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js
 function parseNullableDef(def, refs) {
   if (["ZodString", "ZodNumber", "ZodBigInt", "ZodBoolean", "ZodNull"].includes(def.innerType._def.typeName) && (!def.innerType._def.checks || !def.innerType._def.checks.length)) {
     if (refs.target === "openApi3") {
@@ -18330,7 +18342,7 @@ function parseNullableDef(def, refs) {
   return base && { anyOf: [base, { type: "null" }] };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/number.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/number.js
 function parseNumberDef(def, refs) {
   const res = {
     type: "number"
@@ -18379,7 +18391,7 @@ function parseNumberDef(def, refs) {
   return res;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/object.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/object.js
 function parseObjectDef(def, refs) {
   const forceOptionalIntoNullable = refs.target === "openAi";
   const result = {
@@ -18449,7 +18461,7 @@ function safeIsOptional(schema) {
   }
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js
 var parseOptionalDef = (def, refs) => {
   if (refs.currentPath.toString() === refs.propertyPath?.toString()) {
     return parseDef(def.innerType._def, refs);
@@ -18468,7 +18480,7 @@ var parseOptionalDef = (def, refs) => {
   } : parseAnyDef(refs);
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js
 var parsePipelineDef = (def, refs) => {
   if (refs.pipeStrategy === "input") {
     return parseDef(def.in._def, refs);
@@ -18488,12 +18500,12 @@ var parsePipelineDef = (def, refs) => {
   };
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js
 function parsePromiseDef(def, refs) {
   return parseDef(def.type._def, refs);
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/set.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/set.js
 function parseSetDef(def, refs) {
   const items = parseDef(def.valueType._def, {
     ...refs,
@@ -18513,7 +18525,7 @@ function parseSetDef(def, refs) {
   return schema;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js
 function parseTupleDef(def, refs) {
   if (def.rest) {
     return {
@@ -18541,24 +18553,24 @@ function parseTupleDef(def, refs) {
   }
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js
 function parseUndefinedDef(refs) {
   return {
     not: parseAnyDef(refs)
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js
 function parseUnknownDef(refs) {
   return parseAnyDef(refs);
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js
 var parseReadonlyDef = (def, refs) => {
   return parseDef(def.innerType._def, refs);
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/selectParser.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/selectParser.js
 var selectParser = (def, typeName, refs) => {
   switch (typeName) {
     case ZodFirstPartyTypeKind.ZodString:
@@ -18634,7 +18646,7 @@ var selectParser = (def, typeName, refs) => {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parseDef.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/parseDef.js
 function parseDef(def, refs, forceResolution = false) {
   const seenItem = refs.seen.get(def);
   if (refs.override) {
@@ -18690,7 +18702,7 @@ var addMeta = (def, refs, jsonSchema) => {
   return jsonSchema;
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js
+// upstream/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@3.25.76/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js
 var zodToJsonSchema = (schema, options) => {
   const refs = getRefs(options);
   let definitions = typeof options === "object" && options.definitions ? Object.entries(options.definitions).reduce((acc, [name2, schema2]) => ({
@@ -18752,7 +18764,7 @@ var zodToJsonSchema = (schema, options) => {
   return combined;
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js
 function mapMiniTarget(t) {
   if (!t)
     return "draft-7";
@@ -18794,7 +18806,7 @@ function parseWithCompat(schema, data) {
   return result.data;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js
 var DEFAULT_REQUEST_TIMEOUT_MSEC = 6e4;
 var Protocol = class {
   constructor(_options) {
@@ -18835,6 +18847,9 @@ var Protocol = class {
       this.setRequestHandler(GetTaskPayloadRequestSchema, async (request, extra) => {
         const handleTaskResult = async () => {
           const taskId = request.params.taskId;
+          if (!await this._taskStore.getTask(taskId, extra.sessionId)) {
+            throw new McpError(ErrorCode.InvalidParams, `Task not found: ${taskId}`);
+          }
           if (this._taskMessageQueue) {
             let queuedMessage;
             while (queuedMessage = await this._taskMessageQueue.dequeue(taskId, extra.sessionId)) {
@@ -18865,12 +18880,12 @@ var Protocol = class {
             throw new McpError(ErrorCode.InvalidParams, `Task not found: ${taskId}`);
           }
           if (!isTerminal(task.status)) {
-            await this._waitForTaskUpdate(taskId, extra.signal);
+            await this._waitForTaskUpdate(taskId, extra.signal, extra.sessionId);
             return await handleTaskResult();
           }
           if (isTerminal(task.status)) {
             const result = await this._taskStore.getTaskResult(taskId, extra.sessionId);
-            this._clearTaskQueue(taskId);
+            this._clearTaskQueue(taskId, extra.sessionId);
             return {
               ...result,
               _meta: {
@@ -18907,7 +18922,7 @@ var Protocol = class {
             throw new McpError(ErrorCode.InvalidParams, `Cannot cancel task in terminal status: ${task.status}`);
           }
           await this._taskStore.updateTaskStatus(request.params.taskId, "cancelled", "Client cancelled task execution.", extra.sessionId);
-          this._clearTaskQueue(request.params.taskId);
+          this._clearTaskQueue(request.params.taskId, extra.sessionId);
           const cancelledTask = await this._taskStore.getTask(request.params.taskId, extra.sessionId);
           if (!cancelledTask) {
             throw new McpError(ErrorCode.InvalidParams, `Task not found after cancellation: ${request.params.taskId}`);
@@ -19035,6 +19050,19 @@ var Protocol = class {
     const handler = this._requestHandlers.get(request.method) ?? this.fallbackRequestHandler;
     const capturedTransport = this._transport;
     const relatedTaskId = request.params?._meta?.[RELATED_TASK_META_KEY]?.taskId;
+    const sessionId = capturedTransport?.sessionId;
+    const store = this._taskStore;
+    let relatedTaskFound = true;
+    let relatedTaskLookup;
+    if (relatedTaskId && store && this._taskMessageQueue && sessionId !== void 0) {
+      relatedTaskFound = false;
+      relatedTaskLookup = (async () => {
+        if (!await store.getTask(relatedTaskId, sessionId)) {
+          throw new McpError(ErrorCode.InvalidParams, `Task not found: ${relatedTaskId}`);
+        }
+        relatedTaskFound = true;
+      })();
+    }
     if (handler === void 0) {
       const errorResponse = {
         jsonrpc: "2.0",
@@ -19044,7 +19072,10 @@ var Protocol = class {
           message: "Method not found"
         }
       };
-      if (relatedTaskId && this._taskMessageQueue) {
+      if (relatedTaskId && relatedTaskLookup) {
+        const queuedError = { type: "error", message: errorResponse, timestamp: Date.now() };
+        relatedTaskLookup.then(() => this._enqueueTaskMessage(relatedTaskId, queuedError, sessionId), () => capturedTransport?.send(errorResponse)).catch((error2) => this._onerror(new Error(`Failed to send an error response: ${error2}`)));
+      } else if (relatedTaskId && this._taskMessageQueue) {
         this._enqueueTaskMessage(relatedTaskId, {
           type: "error",
           message: errorResponse,
@@ -19095,7 +19126,10 @@ var Protocol = class {
       closeSSEStream: extra?.closeSSEStream,
       closeStandaloneSSEStream: extra?.closeStandaloneSSEStream
     };
-    Promise.resolve().then(() => {
+    (relatedTaskLookup ?? Promise.resolve()).then(() => {
+      if (relatedTaskLookup && abortController.signal.aborted) {
+        throw new McpError(ErrorCode.ConnectionClosed, "Request was cancelled");
+      }
       if (taskCreationParams) {
         this.assertTaskHandlerCapability(request.method);
       }
@@ -19130,7 +19164,7 @@ var Protocol = class {
           ...error2["data"] !== void 0 && { data: error2["data"] }
         }
       };
-      if (relatedTaskId && this._taskMessageQueue) {
+      if (relatedTaskId && this._taskMessageQueue && relatedTaskFound) {
         await this._enqueueTaskMessage(relatedTaskId, {
           type: "error",
           message: errorResponse,
@@ -19610,7 +19644,7 @@ var Protocol = class {
       throw new Error("Cannot enqueue task message: taskStore and taskMessageQueue are not configured");
     }
     const maxQueueSize = this._options?.maxTaskQueueSize;
-    await this._taskMessageQueue.enqueue(taskId, message, sessionId, maxQueueSize);
+    await this._taskMessageQueue.enqueue(taskId, message, sessionId ?? this._transport?.sessionId, maxQueueSize);
   }
   /**
    * Clears the message queue for a task and rejects any pending request resolvers.
@@ -19639,12 +19673,13 @@ var Protocol = class {
    * Uses polling to check for updates at the task's configured poll interval.
    * @param taskId The task ID to wait for
    * @param signal Abort signal to cancel the wait
+   * @param sessionId Session of the request that waits, passed to the task store
    * @returns Promise that resolves when an update occurs or rejects if aborted
    */
-  async _waitForTaskUpdate(taskId, signal) {
+  async _waitForTaskUpdate(taskId, signal, sessionId) {
     let interval = this._options?.defaultTaskPollInterval ?? 1e3;
     try {
-      const task = await this._taskStore?.getTask(taskId);
+      const task = await this._taskStore?.getTask(taskId, sessionId);
       if (task?.pollInterval) {
         interval = task.pollInterval;
       }
@@ -19748,7 +19783,7 @@ function mergeCapabilities(base, additional) {
   return result;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js
 var import_ajv = __toESM(require_ajv(), 1);
 var import_ajv_formats = __toESM(require_dist(), 1);
 function createDefaultAjvInstance() {
@@ -19816,7 +19851,7 @@ var AjvJsonSchemaValidator = class {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js
 var ExperimentalServerTasks = class {
   constructor(_server) {
     this._server = _server;
@@ -20029,7 +20064,7 @@ var ExperimentalServerTasks = class {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js
 function assertToolsCallTaskCapability(requests, method, entityName) {
   if (!requests) {
     throw new Error(`${entityName} does not support task creation (required for ${method})`);
@@ -20064,7 +20099,7 @@ function assertClientRequestTaskCapability(requests, method, entityName) {
   }
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js
 var Server = class extends Protocol {
   /**
    * Initializes this server with the given name and version information.
@@ -20435,7 +20470,7 @@ var Server = class extends Protocol {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/completable.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/completable.js
 var COMPLETABLE_SYMBOL = /* @__PURE__ */ Symbol.for("mcp.completable");
 function isCompletable(schema) {
   return !!schema && typeof schema === "object" && COMPLETABLE_SYMBOL in schema;
@@ -20449,7 +20484,7 @@ var McpZodTypeKind;
   McpZodTypeKind2["Completable"] = "McpCompletable";
 })(McpZodTypeKind || (McpZodTypeKind = {}));
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/toolNameValidation.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/toolNameValidation.js
 var TOOL_NAME_REGEX = /^[A-Za-z0-9._-]{1,128}$/;
 function validateToolName(name) {
   const warnings = [];
@@ -20507,7 +20542,7 @@ function validateAndWarnToolName(name) {
   return result.isValid;
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/mcp-server.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/mcp-server.js
 var ExperimentalMcpServerTasks = class {
   constructor(_mcpServer) {
     this._mcpServer = _mcpServer;
@@ -20522,7 +20557,43 @@ var ExperimentalMcpServerTasks = class {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js
+function toolInputElementCount(value, max) {
+  let count = 0;
+  const stack = [value];
+  while (stack.length > 0) {
+    const node = stack.pop();
+    if (node === null || typeof node !== "object")
+      continue;
+    if (Array.isArray(node)) {
+      for (const child of node) {
+        if (++count > max)
+          return count;
+        if (child !== null && typeof child === "object")
+          stack.push(child);
+      }
+    } else {
+      for (const key in node) {
+        if (!Object.prototype.hasOwnProperty.call(node, key))
+          continue;
+        if (++count > max)
+          return count;
+        const child = node[key];
+        if (child !== null && typeof child === "object")
+          stack.push(child);
+      }
+    }
+  }
+  return count;
+}
+function resolveMaxToolInputElements(value) {
+  if (value === void 0 || value === Infinity)
+    return void 0;
+  if (typeof value !== "number" || Number.isNaN(value) || value < 1) {
+    throw new RangeError(`maxToolInputElements must be a number of at least 1, or Infinity, got ${String(value)}`);
+  }
+  return value;
+}
 var McpServer = class {
   constructor(serverInfo, options) {
     this._registeredResources = {};
@@ -20534,6 +20605,7 @@ var McpServer = class {
     this._resourceHandlersInitialized = false;
     this._promptHandlersInitialized = false;
     this.server = new Server(serverInfo, options);
+    this._maxToolInputElements = resolveMaxToolInputElements(options?.maxToolInputElements);
   }
   /**
    * Access experimental features.
@@ -20664,12 +20736,15 @@ var McpServer = class {
    * Validates tool input arguments against the tool's input schema.
    */
   async validateToolInput(tool, args, toolName) {
+    if (this._maxToolInputElements !== void 0 && toolInputElementCount(args, this._maxToolInputElements) > this._maxToolInputElements) {
+      throw new McpError(ErrorCode.InvalidParams, `Invalid arguments for tool ${toolName}: arguments contain more than the maximum of ${this._maxToolInputElements} elements`);
+    }
     if (!tool.inputSchema) {
       return void 0;
     }
     const inputObj = normalizeObjectSchema(tool.inputSchema);
     const schemaToParse = inputObj ?? tool.inputSchema;
-    const parseResult = await safeParseAsync2(schemaToParse, args);
+    const parseResult = await safeParseAsync2(schemaToParse, args ?? {});
     if (!parseResult.success) {
       const error2 = "error" in parseResult ? parseResult.error : "Unknown error";
       const errorMessage = getParseErrorMessage(error2);
@@ -20907,7 +20982,7 @@ var McpServer = class {
       }
       if (prompt.argsSchema) {
         const argsObj = normalizeObjectSchema(prompt.argsSchema);
-        const parseResult = await safeParseAsync2(argsObj, request.params.arguments);
+        const parseResult = await safeParseAsync2(argsObj, request.params.arguments ?? {});
         if (!parseResult.success) {
           const error2 = "error" in parseResult ? parseResult.error : "Unknown error";
           const errorMessage = getParseErrorMessage(error2);
@@ -21314,10 +21389,10 @@ var EMPTY_COMPLETION_RESULT = {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
 var import_node_process = __toESM(require("node:process"), 1);
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js
 var STDIO_DEFAULT_MAX_BUFFER_SIZE = 10 * 1024 * 1024;
 var ReadBuffer = class {
   constructor(options) {
@@ -21354,7 +21429,7 @@ function serializeMessage(message) {
   return JSON.stringify(message) + "\n";
 }
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
+// upstream/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
 var StdioServerTransport = class {
   constructor(_stdin = import_node_process.default.stdin, _stdout = import_node_process.default.stdout, options) {
     this._stdin = _stdin;
@@ -21421,7 +21496,7 @@ var StdioServerTransport = class {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/packages/figma-client/dist/selection.js
+// upstream/packages/figma-client/dist/selection.js
 var DEFAULT_DEPTH = 2;
 var MAX_DEPTH = 5;
 var DEFAULT_MAX_CHILDREN = 20;
@@ -21568,7 +21643,7 @@ function inspectSelection(node, options) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/packages/figma-client/dist/index.js
+// upstream/packages/figma-client/dist/index.js
 function normalizeFigmaNodeId(nodeId) {
   let decoded = nodeId.trim();
   try {
@@ -22022,7 +22097,7 @@ var FigmaClient = class {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/packages/figma-client/dist/plugin-bridge.js
+// upstream/packages/figma-client/dist/plugin-bridge.js
 var DEFAULT_HOST = "127.0.0.1";
 var DEFAULT_PORT = 3845;
 var DEFAULT_MAX_BODY_BYTES = 10 * 1024 * 1024;
@@ -22122,7 +22197,7 @@ var PluginBridgeClient = class {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/packages/design-tokens/dist/index.js
+// upstream/packages/design-tokens/dist/index.js
 function toHex(n) {
   const s = Math.max(0, Math.min(255, Math.round(n))).toString(16);
   return s.length === 1 ? "0" + s : s;
@@ -22445,7 +22520,7 @@ function buildShadowVarIndex(tokens, opts) {
   return { map };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/packages/code-generator/dist/index.js
+// upstream/packages/code-generator/dist/index.js
 function toHex2(n) {
   const s = Math.max(0, Math.min(255, Math.round(n))).toString(16);
   return s.length === 1 ? "0" + s : s;
@@ -22775,7 +22850,7 @@ ${renderHtml(n, opts)}`;
   }
 }
 
-// ../../../../../../../tmp/figma-mcp-free/packages/config/dist/index.js
+// upstream/packages/config/dist/index.js
 var import_node_fs = require("node:fs");
 var import_node_path = require("node:path");
 var import_node_os = __toESM(require("node:os"), 1);
@@ -22824,7 +22899,7 @@ function getToken() {
   return process.env.FIGMA_TOKEN?.trim() || readConfig().token?.trim();
 }
 
-// ../../../../../../../tmp/figma-mcp-free/packages/mcp-server/dist/tool-schemas.js
+// upstream/packages/mcp-server/dist/tool-schemas.js
 var refresh = external_exports.boolean().optional();
 var selectionIndex = external_exports.number().int().min(0).max(49).optional();
 var getFileInputSchema = {
@@ -22894,7 +22969,7 @@ var generateCurrentSelectionInputSchema = {
 var cacheStatsInputSchema = {};
 var clearCacheInputSchema = {};
 
-// ../../../../../../../tmp/figma-mcp-free/packages/mcp-server/dist/index.js
+// upstream/packages/mcp-server/dist/index.js
 function getToken2() {
   const token = process.env.FIGMA_TOKEN?.trim() || getToken();
   if (!token)
