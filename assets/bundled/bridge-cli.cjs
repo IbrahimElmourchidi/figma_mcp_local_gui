@@ -30,9 +30,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/error.js
+// upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/error.js
 var require_error = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/error.js"(exports2) {
+  "upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/error.js"(exports2) {
     var CommanderError2 = class extends Error {
       /**
        * Constructs the CommanderError class
@@ -65,9 +65,9 @@ var require_error = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/argument.js
+// upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/argument.js
 var require_argument = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/argument.js"(exports2) {
+  "upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/argument.js"(exports2) {
     var { InvalidArgumentError: InvalidArgumentError2 } = require_error();
     var Argument2 = class {
       /**
@@ -192,9 +192,9 @@ var require_argument = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/help.js
+// upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/help.js
 var require_help = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/help.js"(exports2) {
+  "upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/help.js"(exports2) {
     var { humanReadableArgName } = require_argument();
     var Help2 = class {
       constructor() {
@@ -606,9 +606,9 @@ var require_help = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/option.js
+// upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/option.js
 var require_option = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/option.js"(exports2) {
+  "upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/option.js"(exports2) {
     var { InvalidArgumentError: InvalidArgumentError2 } = require_error();
     var Option2 = class {
       /**
@@ -878,9 +878,9 @@ var require_option = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/suggestSimilar.js
+// upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/suggestSimilar.js
 var require_suggestSimilar = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/suggestSimilar.js"(exports2) {
+  "upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/suggestSimilar.js"(exports2) {
     var maxDistance = 3;
     function editDistance(a, b) {
       if (Math.abs(a.length - b.length) > maxDistance)
@@ -958,9 +958,9 @@ var require_suggestSimilar = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/command.js
+// upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/command.js
 var require_command = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/command.js"(exports2) {
+  "upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/lib/command.js"(exports2) {
     var EventEmitter = require("node:events").EventEmitter;
     var childProcess = require("node:child_process");
     var path = require("node:path");
@@ -3001,9 +3001,9 @@ Expecting one of '${allowedValues.join("', '")}'`);
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/index.js
+// upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/index.js
 var require_commander = __commonJS({
-  "../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/index.js"(exports2) {
+  "upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/index.js"(exports2) {
     var { Argument: Argument2 } = require_argument();
     var { Command: Command2 } = require_command();
     var { CommanderError: CommanderError2, InvalidArgumentError: InvalidArgumentError2 } = require_error();
@@ -3023,7 +3023,7 @@ var require_commander = __commonJS({
   }
 });
 
-// ../../../../../../../tmp/figma-mcp-free/node_modules/.pnpm/commander@12.1.0/node_modules/commander/esm.mjs
+// upstream/node_modules/.pnpm/commander@12.1.0/node_modules/commander/esm.mjs
 var import_index = __toESM(require_commander(), 1);
 var {
   program,
@@ -3040,11 +3040,11 @@ var {
   Help
 } = import_index.default;
 
-// ../../../../../../../tmp/figma-mcp-free/packages/cli/dist/bridge-cli.js
+// upstream/packages/cli/dist/bridge-cli.js
 var import_node_fs = require("node:fs");
 var import_node_path = require("node:path");
 
-// ../../../../../../../tmp/figma-mcp-free/packages/figma-client/dist/selection.js
+// upstream/packages/figma-client/dist/selection.js
 var DEFAULT_DEPTH = 2;
 var MAX_DEPTH = 5;
 var DEFAULT_MAX_CHILDREN = 20;
@@ -3191,10 +3191,10 @@ function inspectSelection(node, options) {
   };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/packages/figma-client/dist/index.js
+// upstream/packages/figma-client/dist/index.js
 var DEFAULT_CACHE_TTL_MS = 5 * 60 * 1e3;
 
-// ../../../../../../../tmp/figma-mcp-free/packages/figma-client/dist/plugin-bridge.js
+// upstream/packages/figma-client/dist/plugin-bridge.js
 var import_node_crypto = require("node:crypto");
 var import_node_http = require("node:http");
 var DEFAULT_HOST = "127.0.0.1";
@@ -3608,7 +3608,7 @@ var PluginBridgeClient = class {
   }
 };
 
-// ../../../../../../../tmp/figma-mcp-free/packages/design-tokens/dist/index.js
+// upstream/packages/design-tokens/dist/index.js
 function sanitizeVarKey(s) {
   return s.replace(/[^a-z0-9\-\/]+/gi, "-").replace(/[\/]+/g, "-").replace(/^-+|-+$/g, "").toLowerCase();
 }
@@ -3762,7 +3762,7 @@ function buildShadowVarIndex(tokens, opts) {
   return { map };
 }
 
-// ../../../../../../../tmp/figma-mcp-free/packages/code-generator/dist/index.js
+// upstream/packages/code-generator/dist/index.js
 function toHex(n) {
   const s = Math.max(0, Math.min(255, Math.round(n))).toString(16);
   return s.length === 1 ? "0" + s : s;
@@ -4092,7 +4092,7 @@ ${renderHtml(n, opts)}`;
   }
 }
 
-// ../../../../../../../tmp/figma-mcp-free/packages/cli/dist/bridge-cli.js
+// upstream/packages/cli/dist/bridge-cli.js
 function parseInteger(value) {
   const parsed = Number(value);
   if (!Number.isInteger(parsed) || parsed < 0)
